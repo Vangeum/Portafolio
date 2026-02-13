@@ -8,171 +8,183 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; background-color: #0f172a; } /* Slate 900 */
+        body { font-family: 'Inter', sans-serif; background-color: #020617; } /* Navy/Slate 950 */
         
-        .glass-card {
-            background: rgba(30, 41, 59, 0.7);
-            border: 1px solid rgba(51, 65, 85, 0.5);
-            backdrop-filter: blur(10px);
+        .card-dark {
+            background: #0f172a; /* Slate 900 */
+            border: 1px solid #1e293b; /* Slate 800 */
+            transition: all 0.3s ease;
+        }
+        .card-dark:hover {
+            border-color: #6366f1; /* Indigo 500 */
+            transform: translateY(-2px);
         }
 
         @media print {
             .no-print { display: none !important; }
             body { background-color: white !important; color: black !important; }
-            .glass-card { background: white !important; border: 1px solid #ccc !important; color: black !important; }
-            .text-indigo-400 { color: #312e81 !important; }
-            .text-slate-400 { color: #475569 !important; }
+            .card-dark { background: white !important; border: 1px solid #e2e8f0 !important; color: black !important; }
+            .text-indigo-400, .text-indigo-500 { color: #4338ca !important; }
+            .text-slate-400 { color: #64748b !important; }
         }
     </style>
 </head>
 <body class="text-slate-300">
 
-    <nav class="fixed w-full bg-slate-900/90 backdrop-blur-md z-50 no-print border-b border-slate-800">
+    <nav class="fixed w-full bg-slate-950/80 backdrop-blur-md z-50 no-print border-b border-slate-900">
         <div class="max-w-6xl mx-auto px-6">
             <div class="flex justify-between h-16 items-center">
-                <div class="text-xl font-bold text-white tracking-tighter">VR.<span class="text-indigo-500">PRO</span></div>
-                <div class="hidden md:flex space-x-8 text-sm font-medium">
-                    <a href="#perfil" class="hover:text-white transition">Perfil</a>
-                    <a href="#experiencia" class="hover:text-white transition">Experiencia</a>
-                    <a href="#proyectos" class="hover:text-white transition">Proyectos</a>
-                    <a href="#certificaciones" class="hover:text-white transition">Certificaciones</a>
+                <div class="text-xl font-bold text-white tracking-tighter">VR.<span class="text-indigo-500">ENGINEER</span></div>
+                <div class="hidden md:flex space-x-8 text-xs font-bold uppercase tracking-widest">
+                    <a href="#perfil" class="hover:text-indigo-400 transition">Perfil</a>
+                    <a href="#experiencia" class="hover:text-indigo-400 transition">Experiencia</a>
+                    <a href="#habilidades" class="hover:text-indigo-400 transition">Capacidades</a>
+                    <a href="#certificaciones" class="hover:text-indigo-400 transition">Logros</a>
                 </div>
-                <button onclick="window.print()" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg text-xs font-bold transition">
-                    DESCARGAR CV
+                <button onclick="window.print()" class="border border-indigo-500 text-indigo-400 hover:bg-indigo-500 hover:text-white px-4 py-2 rounded text-xs font-bold transition">
+                    EXPORTAR CV
                 </button>
             </div>
         </div>
     </nav>
 
-    <header class="pt-32 pb-16 bg-slate-900 print:pt-10">
+    <header class="pt-40 pb-20 bg-gradient-to-b from-slate-950 to-slate-900">
         <div class="max-w-5xl mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Vangelis Antonio Ramos Rios</h1>
-            <p class="text-xl text-indigo-400 font-medium mb-8">Ingeniero en Computación e Informática · UNAB</p>
+            <h1 class="text-5xl font-extrabold text-white mb-4 tracking-tight">Vangelis Antonio Ramos Rios</h1>
+            <p class="text-2xl text-indigo-400 font-medium mb-8">Ingeniero en Computación e Informática</p>
             
-            <div class="flex justify-center flex-wrap gap-6 text-sm text-slate-400 mb-10">
-                <span class="flex items-center"><i class="fas fa-envelope mr-2"></i> contactovange02@gmail.com</span>
-                <span class="flex items-center"><i class="fas fa-phone mr-2"></i> +56 9 5357 8417</span>
-                <span class="flex items-center"><i class="fas fa-map-marker-alt mr-2"></i> Lo Espejo, Santiago</span>
+            <div class="flex justify-center flex-wrap gap-6 text-sm text-slate-400 mb-12">
+                <span class="flex items-center"><i class="fas fa-envelope text-indigo-500 mr-2"></i> contactovange02@gmail.com</span>
+                <span class="flex items-center"><i class="fas fa-phone text-indigo-500 mr-2"></i> +56 9 5357 8417</span>
+                <span class="flex items-center"><i class="fas fa-map-marker-alt text-indigo-500 mr-2"></i> Santiago, Chile</span>
             </div>
             
-            <p class="max-w-3xl mx-auto text-slate-400 leading-relaxed text-lg italic">
-                "Profesional orientado a la excelencia operativa, con una visión integral que abarca desde la infraestructura física hasta el desarrollo de software complejo. Mi enfoque actual se centra en garantizar la continuidad de servicios TI críticos y la optimización de redes corporativas."
+            <p class="max-w-3xl mx-auto text-slate-400 leading-relaxed text-lg border-l-2 border-indigo-600 pl-6 text-justify">
+                Especialista en **Soporte TI y Continuidad Operativa** con experiencia directa en la transformación digital de los sectores de minería, ingeniería y construcción[cite: 37]. Experto en la gestión de ecosistemas de software de alta complejidad y arquitectura de redes, enfocado en maximizar el valor tecnológico para clientes corporativos[cite: 38, 68].
             </p>
         </div>
     </header>
 
-    <main class="max-w-6xl mx-auto px-6 pb-24">
+    <main class="max-w-5xl mx-auto px-6 pb-24">
 
         <section id="perfil" class="mb-20">
-            <h2 class="text-2xl font-bold text-white mb-8 flex items-center">
-                <span class="w-8 h-1 bg-indigo-500 mr-4"></span> Perfil Profesional
-            </h2>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="glass-card p-6 rounded-xl md:col-span-2">
-                    <h3 class="text-white font-bold mb-4">Sobre mi preparación</h3>
-                    <p class="text-sm leading-relaxed text-justify mb-4">
-                        Soy un ingeniero proactivo con capacidad de adaptación a entornos de alta presión. Mi formación en la Universidad Andrés Bello y mi experiencia laboral en empresas líderes me han permitido desarrollar un criterio técnico sólido para la toma de decisiones estratégicas en infraestructura y soporte.
+            <h2 class="text-2xl font-bold text-white mb-8">Perfil Profesional</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="card-dark p-8 rounded-xl">
+                    <h3 class="text-indigo-400 font-bold mb-4 uppercase text-xs tracking-widest">Resumen Ejecutivo</h3>
+                    <p class="text-sm leading-relaxed text-slate-300">
+                        Poseo una visión integral del soporte TI en entornos corporativos, fortalecida por la resolución de incidencias críticas para grandes firmas de ingeniería[cite: 41, 109]. Mi metodología combina el diagnóstico técnico avanzado con una comunicación estratégica con fabricantes internacionales y clientes finales[cite: 39].
                     </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-slate-800 text-indigo-300 rounded-md text-xs border border-indigo-500/30">Infraestructura TI</span>
-                        <span class="px-3 py-1 bg-slate-800 text-indigo-300 rounded-md text-xs border border-indigo-500/30">Ciberseguridad</span>
-                        <span class="px-3 py-1 bg-slate-800 text-indigo-300 rounded-md text-xs border border-indigo-500/30">Automatización</span>
-                    </div>
                 </div>
-                <div class="glass-card p-6 rounded-xl">
-                    <h3 class="text-white font-bold mb-4">Stack Técnico</h3>
-                    <div class="space-y-3 text-xs">
-                        <div>
-                            <span class="text-slate-500 uppercase font-bold">Lenguajes:</span>
-                            <p class="text-indigo-300">Python, Java, C/C++, SQL, JavaScript</p>
-                        </div>
-                        <div>
-                            <span class="text-slate-500 uppercase font-bold">Redes:</span>
-                            <p class="text-indigo-300">LAN/WiFi, IP, Seguridad de Redes</p>
-                        </div>
-                        <div>
-                            <span class="text-slate-500 uppercase font-bold">Hardware:</span>
-                            <p class="text-indigo-300">Servidores, POS, Infraestructura Crítica</p>
-                        </div>
-                    </div>
+                <div class="card-dark p-8 rounded-xl">
+                    <h3 class="text-indigo-400 font-bold mb-4 uppercase text-xs tracking-widest">Diferenciador Clave</h3>
+                    <p class="text-sm leading-relaxed text-slate-300">
+                        Capacidad demostrada para gestionar incidentes de primer nivel bajo metodologías de triage, logrando la estabilidad operativa en el uso de herramientas líderes de la industria como Autodesk y Adobe[cite: 38, 56].
+                    </p>
                 </div>
             </div>
         </section>
 
         <section id="experiencia" class="mb-20">
-            <h2 class="text-2xl font-bold text-white mb-8 flex items-center">
-                <span class="w-8 h-1 bg-indigo-500 mr-4"></span> Trayectoria Profesional
-            </h2>
+            <h2 class="text-2xl font-bold text-white mb-8">Experiencia Laboral</h2>
             <div class="space-y-8">
-                <div class="glass-card p-8 rounded-xl border-l-4 border-indigo-500">
-                    <div class="flex flex-col md:flex-row justify-between items-start mb-4">
+                <div class="card-dark p-8 rounded-xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-indigo-600 text-white text-[10px] font-bold px-4 py-1">POSICIÓN ACTUAL</div>
+                    <div class="flex flex-col md:flex-row justify-between items-start mb-6">
                         <div>
-                            <h3 class="text-xl font-bold text-white">Área IT / Soporte Técnico Especializado</h3>
-                            <p class="text-indigo-400 font-semibold">COMGRAP</p>
+                            <h3 class="text-xl font-bold text-white">Soporte TI Especializado</h3>
+                            <p class="text-indigo-400 font-bold">Computación Gráfica Aplicada (COMGRAP)</p>
                         </div>
-                        <span class="bg-indigo-600/20 text-indigo-400 text-xs px-3 py-1 rounded-full font-bold">ACTUAL</span>
                     </div>
-                    <ul class="list-disc list-inside text-sm space-y-2 text-slate-400">
-                        <li>Responsable de la continuidad operativa tecnológica y soporte de infraestructura crítica.</li>
-                        <li>Gestión de redes internas y mantenimiento de sistemas para asegurar el flujo de trabajo corporativo.</li>
-                        <li>Implementación de soluciones técnicas para usuarios internos del área IT.</li>
-                    </ul>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-xs font-bold text-slate-500 uppercase mb-3">Responsabilidades Clave</h4>
+                            <ul class="text-sm space-y-2 text-slate-400">
+                                <li class="flex items-start"><i class="fas fa-check-circle text-indigo-500 mt-1 mr-2"></i> Soporte experto en Autodesk (AutoCAD, Revit, Civil 3D) y Adobe Creative Cloud[cite: 38].</li>
+                                <li class="flex items-start"><i class="fas fa-check-circle text-indigo-500 mt-1 mr-2"></i> Gestión, validación y seguimiento de licencias corporativas mediante CRM y Salesforce[cite: 38, 130].</li>
+                                <li class="flex items-start"><i class="fas fa-check-circle text-indigo-500 mt-1 mr-2"></i> Diagnóstico de incidencias críticas y escalamiento directo a fabricantes internacionales[cite: 39, 48].</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-slate-500 uppercase mb-3">Logros & Aportes</h4>
+                            <ul class="text-sm space-y-2 text-slate-400">
+                                <li class="flex items-start"><i class="fas fa-star text-indigo-500 mt-1 mr-2"></i> Desarrollo de herramientas en Python para filtrado estratégico de licencias[cite: 120].</li>
+                                <li class="flex items-start"><i class="fas fa-star text-indigo-500 mt-1 mr-2"></i> Creación de material técnico educativo para la plataforma YouTube de la empresa[cite: 121, 123].</li>
+                                <li class="flex items-start"><i class="fas fa-star text-indigo-500 mt-1 mr-2"></i> Soporte proactivo a clientes de sectores de minería y energía (Codelco, Indura, Tecno Truss)[cite: 109, 123].</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="glass-card p-8 rounded-xl border-l-4 border-slate-600">
+                <div class="card-dark p-8 rounded-xl opacity-80 hover:opacity-100 transition">
                     <div class="flex flex-col md:flex-row justify-between items-start mb-4">
                         <div>
                             <h3 class="text-xl font-bold text-white">Practicante de Soporte TI</h3>
-                            <p class="text-slate-400 font-semibold">Family Shop</p>
+                            <p class="text-slate-400 font-bold">Family Shop</p>
                         </div>
-                        <span class="text-slate-500 text-xs font-bold">NOV 2023 - ENE 2024</span>
+                        <span class="text-slate-500 text-xs font-bold">2023 - 2024</span>
                     </div>
-                    <p class="text-sm text-slate-400 mb-4">Hito clave: Gestión exitosa de la infraestructura tecnológica para la apertura de **3 nuevas sucursales**.</p>
-                    <ul class="list-disc list-inside text-xs space-y-1 text-slate-500">
-                        <li>Instalación de equipos POS y configuración de direccionamiento IP.</li>
-                        <li>Configuración básica de redes LAN/WiFi y resolución de incidencias en terreno.</li>
-                    </ul>
+                    <p class="text-sm text-slate-400">
+                        Liderazgo en la preparación tecnológica para la **apertura de tres nuevas tiendas**, asegurando la instalación de redes y equipos en plazos críticos.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="habilidades" class="mb-20">
+            <h2 class="text-2xl font-bold text-white mb-8 text-center">Especialización Técnica</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="card-dark p-6 rounded-xl text-center">
+                    <i class="fas fa-network-wired text-indigo-500 text-2xl mb-3"></i>
+                    <p class="text-xs font-bold text-white">Arquitectura de Redes</p>
+                </div>
+                <div class="card-dark p-6 rounded-xl text-center">
+                    <i class="fas fa-shield-alt text-indigo-500 text-2xl mb-3"></i>
+                    <p class="text-xs font-bold text-white">Seguridad TI</p>
+                </div>
+                <div class="card-dark p-6 rounded-xl text-center">
+                    <i class="fas fa-code text-indigo-500 text-2xl mb-3"></i>
+                    <p class="text-xs font-bold text-white">Python & Automatización</p>
+                </div>
+                <div class="card-dark p-6 rounded-xl text-center">
+                    <i class="fas fa-headset text-indigo-500 text-2xl mb-3"></i>
+                    <p class="text-xs font-bold text-white">Soporte Enterprise</p>
                 </div>
             </div>
         </section>
 
         <section id="certificaciones" class="mb-20">
-            <h2 class="text-2xl font-bold text-white mb-8 flex items-center">
-                <span class="w-8 h-1 bg-indigo-500 mr-4"></span> Formación y Certificaciones
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div class="glass-card p-4 rounded-lg text-center">
-                    <i class="fas fa-award text-indigo-500 mb-2"></i>
-                    <p class="text-xs font-bold text-white">Software Engineering</p>
-                    <p class="text-[10px] text-slate-500">IBM SkillsBuild</p>
+            <h2 class="text-2xl font-bold text-white mb-8">Certificaciones Internacionales</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                <div class="card-dark p-4 rounded flex items-center justify-between">
+                    <span class="text-slate-300">Software Engineering Introduction</span>
+                    <span class="text-indigo-400 font-bold text-xs">IBM [cite: 133]</span>
                 </div>
-                <div class="glass-card p-4 rounded-lg text-center">
-                    <i class="fas fa-brain text-indigo-500 mb-2"></i>
-                    <p class="text-xs font-bold text-white">Generative AI Apps</p>
-                    <p class="text-[10px] text-slate-500">IBM</p>
+                <div class="card-dark p-4 rounded flex items-center justify-between">
+                    <span class="text-slate-300">Building Generative AI Apps with Python</span>
+                    <span class="text-indigo-400 font-bold text-xs">IBM</span>
                 </div>
-                <div class="glass-card p-4 rounded-lg text-center">
-                    <i class="fas fa-database text-indigo-500 mb-2"></i>
-                    <p class="text-xs font-bold text-white">Big Data Impact</p>
-                    <p class="text-[10px] text-slate-500">Univ. Autónoma de Barcelona</p>
+                <div class="card-dark p-4 rounded flex items-center justify-between">
+                    <span class="text-slate-300">Big Data: Impacto de datos masivos</span>
+                    <span class="text-indigo-400 font-bold text-xs">UAB [cite: 133]</span>
                 </div>
-                <div class="glass-card p-4 rounded-lg text-center">
-                    <i class="fas fa-terminal text-indigo-500 mb-2"></i>
-                    <p class="text-xs font-bold text-white">Prompt Engineering</p>
-                    <p class="text-[10px] text-slate-500">IBM</p>
+                <div class="card-dark p-4 rounded flex items-center justify-between">
+                    <span class="text-slate-300">Generative AI: Prompt Engineering</span>
+                    <span class="text-indigo-400 font-bold text-xs">IBM [cite: 133]</span>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <footer class="bg-slate-950 py-12 border-t border-slate-900 no-print">
-        <div class="max-w-6xl mx-auto px-6 text-center">
-            <div class="flex justify-center gap-6 mb-6">
-                <a href="https://linkedin.com/in/vangelis-ramos" target="_blank" class="text-slate-500 hover:text-white transition"><i class="fab fa-linkedin text-2xl"></i></a>
-                <a href="mailto:contactovange02@gmail.com" class="text-slate-500 hover:text-white transition"><i class="fas fa-envelope text-2xl"></i></a>
+    <footer class="bg-slate-950 py-16 border-t border-slate-900 no-print">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <h3 class="text-white font-bold mb-4 uppercase tracking-[0.3em] text-xs">Contacto Profesional</h3>
+            <div class="flex justify-center gap-8 mb-8">
+                <a href="https://linkedin.com/in/vangelis-ramos" class="text-slate-500 hover:text-white transition text-3xl"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:contactovange02@gmail.com" class="text-slate-500 hover:text-white transition text-3xl"><i class="fas fa-envelope-open-text"></i></a>
             </div>
-            <p class="text-xs text-slate-600 tracking-widest uppercase">Vangelis Ramos Ríos · 2026</p>
+            <p class="text-[10px] text-slate-600 tracking-widest uppercase">© 2026 Vangelis Ramos Ríos · Ingeniería en Computación e Informática</p>
         </div>
     </footer>
 
