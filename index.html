@@ -1,313 +1,688 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio Profesional - Vangelis Ramos</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-        
-        * {
-            font-family: 'Poppins', sans-serif;
-        }
-        
-        body {
-            background-color: #0a0e27;
-            color: #d1d5db;
-        }
+    <title>Vangelis Ramos Ríos · Servicios TI, soporte y automatización</title>
+    <meta name="description" content="Portafolio de Vangelis Ramos Ríos, Analista de Servicios y Experiencia Digital en Grupo COMGRAP. Soporte TI, software de ingeniería (Autodesk, Adobe, Trimble), automatización con Python e IA generativa. Santiago, Chile.">
+    <meta name="author" content="Vangelis Ramos Ríos">
+    <meta name="theme-color" content="#0a0d16">
+    <link rel="canonical" href="https://vangeum.github.io/Portafolio/">
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 
-        .card-professional {
-            background: #111827;
-            border: 1px solid #1f2937;
-            transition: all 0.25s ease;
-            border-radius: 8px;
-        }
+    <!-- Open Graph / redes sociales -->
+    <meta property="og:type" content="profile">
+    <meta property="og:locale" content="es_CL">
+    <meta property="og:title" content="Vangelis Ramos Ríos · Servicios TI, soporte y automatización">
+    <meta property="og:description" content="Analista de Servicios y Experiencia Digital en Grupo COMGRAP. Soporte TI, software de ingeniería, Python e IA generativa.">
+    <meta property="og:url" content="https://vangeum.github.io/Portafolio/">
+    <meta property="og:image" content="https://vangeum.github.io/Portafolio/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
 
-        .card-professional:hover {
-            border-color: #374151;
-            background: #1a202c;
-        }
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Vangelis Ramos Ríos",
+        "jobTitle": "Analista de Servicios y Experiencia Digital",
+        "worksFor": { "@type": "Organization", "name": "Grupo COMGRAP" },
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "Universidad Andrés Bello" },
+        "address": { "@type": "PostalAddress", "addressLocality": "Santiago", "addressCountry": "CL" },
+        "email": "mailto:contactovange02@gmail.com",
+        "url": "https://vangeum.github.io/Portafolio/",
+        "sameAs": ["https://www.linkedin.com/in/vangelis-ramos/", "https://github.com/Vangeum"]
+    }
+    </script>
 
-        .section-title {
-            font-size: 28px;
-            font-weight: 600;
-            color: #f3f4f6;
-            margin-bottom: 32px;
-            position: relative;
-            padding-bottom: 16px;
-        }
+    <!-- Tema guardado antes de pintar, para evitar parpadeo -->
+    <script>
+        (function () {
+            var root = document.documentElement;
+            root.classList.add('js');
+            try {
+                if (localStorage.getItem('theme') === 'light') root.setAttribute('data-theme', 'light');
+            } catch (e) {}
+        })();
+    </script>
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 2px;
-            background: linear-gradient(to right, #6366f1, transparent);
-        }
-
-        .text-accent {
-            color: #818cf8;
-        }
-
-        .text-muted {
-            color: #9ca3af;
-        }
-
-        @media print {
-            .no-print { display: none !important; }
-            body { background-color: white !important; color: #1f2937 !important; }
-            .card-professional { background: white !important; border: 1px solid #d1d5db !important; }
-            .text-accent { color: #4338ca !important; }
-            .section-title::after { background: #4338ca !important; }
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="fixed w-full bg-[#0a0e27]/95 backdrop-blur-sm z-50 no-print border-b border-gray-800">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="flex justify-between h-16 items-center">
-                <div class="text-lg font-semibold text-white">Vangelis Ramos</div>
-                <div class="hidden md:flex space-x-12 text-sm font-medium">
-                    <a href="#perfil" class="text-gray-400 hover:text-white transition">Perfil</a>
-                    <a href="#experiencia" class="text-gray-400 hover:text-white transition">Experiencia</a>
-                    <a href="#habilidades" class="text-gray-400 hover:text-white transition">Habilidades</a>
-                    <a href="#educacion" class="text-gray-400 hover:text-white transition">Educación</a>
-                </div>
-                <button onclick="window.print()" class="border border-gray-600 text-gray-300 hover:border-gray-400 hover:text-gray-100 px-4 py-2 rounded text-sm font-medium transition">
-                    PDF
+    <!-- Íconos (basados en Lucide, licencia ISC) -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <defs>
+            <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+            <symbol id="i-linkedin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></symbol>
+            <symbol id="i-github" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></symbol>
+            <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></symbol>
+            <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
+            <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+            <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+            <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+            <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></symbol>
+            <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+            <symbol id="i-headset" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></symbol>
+            <symbol id="i-network" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3M12 12V8"/></symbol>
+            <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></symbol>
+            <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></symbol>
+            <symbol id="i-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.94 15.5a2 2 0 0 0-1.44-1.44l-6.13-1.58a.5.5 0 0 1 0-.96L8.5 9.94A2 2 0 0 0 9.94 8.5l1.58-6.13a.5.5 0 0 1 .96 0l1.58 6.13a2 2 0 0 0 1.44 1.44l6.13 1.58a.5.5 0 0 1 0 .96l-6.13 1.58a2 2 0 0 0-1.44 1.44l-1.58 6.13a.5.5 0 0 1-.96 0z"/><path d="M20 3v4M22 5h-4"/></symbol>
+            <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+            <symbol id="i-key" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6M15.5 7.5l3 3L22 7l-3-3"/></symbol>
+            <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+            <symbol id="i-layout" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M9 21V9"/></symbol>
+            <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5v14"/></symbol>
+            <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+            <symbol id="i-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></symbol>
+        </defs>
+    </svg>
+
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <!-- NAVEGACIÓN -->
+    <header class="nav" id="nav">
+        <div class="container nav-inner">
+            <a href="#inicio" class="brand" aria-label="Vangelis Ramos, ir al inicio">
+                <span class="brand-mark" aria-hidden="true">VR</span>
+                <span>Vangelis Ramos</span>
+            </a>
+
+            <nav class="nav-links" aria-label="Secciones">
+                <a href="#perfil">Perfil</a>
+                <a href="#trayectoria">Trayectoria</a>
+                <a href="#proyectos">Proyectos</a>
+                <a href="#habilidades">Habilidades</a>
+                <a href="#educacion">Educación</a>
+                <a href="#certificaciones">Certificaciones</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="icon-btn theme-toggle" type="button" aria-label="Cambiar a modo claro" data-theme-toggle>
+                    <svg class="icon icon-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+                    <svg class="icon icon-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+                </button>
+                <a class="btn btn-primary btn-sm nav-cv" href="cv/Vangelis-Ramos-CV.pdf" download>
+                    <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>
+                    Descargar CV
+                </a>
+                <button class="icon-btn menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
+                    <svg class="icon icon-menu" aria-hidden="true"><use href="#i-menu"/></svg>
+                    <svg class="icon icon-close" aria-hidden="true"><use href="#i-close"/></svg>
                 </button>
             </div>
         </div>
-    </nav>
-
-    <!-- HERO SECTION -->
-    <header class="pt-32 pb-20 bg-gradient-to-b from-[#0a0e27] to-[#111827]">
-        <div class="max-w-5xl mx-auto px-6">
-            <div class="mb-12">
-                <h1 class="text-5xl font-bold text-white mb-3 tracking-tight">Vangelis Antonio Ramos Ríos</h1>
-                <p class="text-xl text-accent font-medium">Ingeniero en Computación e Informática</p>
-            </div>
-            
-            <div class="flex flex-wrap gap-8 text-sm text-gray-400 mb-10">
-                <div class="flex items-center gap-2">
-                    <span class="text-accent">●</span>
-                    <span>contactovange02@gmail.com</span>
-                </div>
-                <div class="flex items-center gap-2">
-                    <span class="text-accent">●</span>
-                    <span>+56 9 5357 8417</span>
-                </div>
-                <div class="flex items-center gap-2">
-                    <span class="text-accent">●</span>
-                    <span>Santiago, Chile</span>
-                </div>
-            </div>
-            
-            <p class="max-w-3xl text-gray-300 leading-relaxed border-l-2 border-indigo-600 pl-6">
-                Especialista en Soporte TI y Continuidad Operativa con experiencia directa en transformación digital de sectores minería, ingeniería y construcción. Experto en gestión de incidencias críticas, arquitectura de redes, automatización con Python e integración de IA.
-            </p>
-        </div>
     </header>
 
-    <!-- MAIN CONTENT -->
-    <main class="max-w-5xl mx-auto px-6 pb-20">
+    <div class="mobile-menu" id="mobile-menu" hidden>
+        <nav aria-label="Secciones (móvil)">
+            <ul>
+                <li><a href="#perfil">Perfil</a></li>
+                <li><a href="#trayectoria">Trayectoria</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#educacion">Educación</a></li>
+                <li><a href="#certificaciones">Certificaciones</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <a class="btn btn-primary" href="cv/Vangelis-Ramos-CV.pdf" download>
+            <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>
+            Descargar CV
+        </a>
+    </div>
 
-        <!-- PERFIL SECTION -->
-        <section id="perfil" class="mb-24">
-            <h2 class="section-title">Perfil Profesional</h2>
-            <div class="card-professional p-8">
-                <p class="text-gray-300 leading-relaxed mb-4">
-                    Poseo una visión integral del soporte TI en entornos corporativos, fortalecida por la resolución de incidencias críticas para grandes firmas de ingeniería. Mi metodología combina diagnóstico técnico profundo con atención al cliente y optimización de procesos.
-                </p>
-                <p class="text-gray-300 leading-relaxed">
-                    Capacidad demostrada para gestionar incidentes de primer nivel bajo metodologías de triage, logrando la estabilidad operativa en el uso de herramientas líderes de la industria como Autodesk, Adobe y soluciones enterprise.
-                </p>
-            </div>
-        </section>
+    <main id="contenido">
 
-        <!-- EXPERIENCIA SECTION -->
-        <section id="experiencia" class="mb-24">
-            <h2 class="section-title">Experiencia Laboral</h2>
-            <div class="space-y-6">
-                
-                <!-- Experiencia 1 - Actual -->
-                <div class="card-professional p-8 border-l-4 border-l-indigo-600">
-                    <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-6">
-                        <div>
-                            <h3 class="text-lg font-semibold text-white mb-1">Asitente Técnico - Soporte TI</h3>
-                            <p class="text-accent font-medium text-sm">Computación Gráfica Aplicada (COMGRAP)</p>
-                        </div>
-                        <span class="text-gray-400 text-xs font-medium mt-2 md:mt-0">Enero 2026 - Posición Actual</span>
-                    </div>
-                    
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div>
-                            <h4 class="text-xs font-semibold text-gray-400 uppercase mb-4 tracking-wide">Responsabilidades</h4>
-                            <ul class="space-y-3 text-sm">
-                                <li class="flex gap-3">
-                                    <span class="text-accent mt-1">▸</span>
-                                    <span class="text-gray-300">Soporte técnico especializado en Autodesk (AutoCAD, Revit, Civil 3D), Adobe Creative Cloud y Trimble</span>
-                                </li>
-                                <li class="flex gap-3">
-                                    <span class="text-accent mt-1">▸</span>
-                                    <span class="text-gray-300">Gestión, validación y seguimiento de licencias corporativas</span>
-                                </li>
-                                <li class="flex gap-3">
-                                    <span class="text-accent mt-1">▸</span>
-                                    <span class="text-gray-300">Diagnóstico de incidencias críticas y escalamiento directo a proveedores</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="text-xs font-semibold text-gray-400 uppercase mb-4 tracking-wide">Logros</h4>
-                            <ul class="space-y-3 text-sm">
-                                <li class="flex gap-3">
-                                    <span class="text-accent mt-1">→</span>
-                                    <span class="text-gray-300">Desarrollo de herramientas en Python para filtrado estratégico de licencias</span>
-                                </li>
-                                <li class="flex gap-3">
-                                    <span class="text-accent mt-1">→</span>
-                                    <span class="text-gray-300">Creación de material técnico educativo para la plataforma corporativa</span>
-                                </li>
-                                <li class="flex gap-3">
-                                    <span class="text-accent mt-1">→</span>
-                                    <span class="text-gray-300">Reducción de tiempo de resolución de incidentes en 35%</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+        <!-- HERO -->
+        <section class="hero" id="inicio" aria-labelledby="hero-title">
+            <div class="container hero-grid">
+                <div>
+                    <p class="eyebrow"><span class="pulse" aria-hidden="true"></span> Santiago, Chile · Modalidad híbrida</p>
+                    <h1 id="hero-title">Vangelis Ramos Ríos</h1>
+                    <p class="hero-role">Analista de Servicios TI <span class="accent">·</span> Soporte, automatización con Python e IA</p>
+                    <p class="hero-lead">Resuelvo incidencias, gestiono licencias de software de ingeniería y diseño, y automatizo tareas repetitivas con Python para que los equipos no pierdan tiempo.</p>
 
-                <!-- Experiencia 2 -->
-                <div class="card-professional p-8">
-                    <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
-                        <div>
-                            <h3 class="text-lg font-semibold text-white mb-1">Practicante de Soporte TI</h3>
-                            <p class="text-gray-400 font-medium text-sm">Family Shop</p>
-                        </div>
-                        <span class="text-gray-500 text-xs font-medium mt-2 md:mt-0">2023 - 2024</span>
-                    </div>
-                    <p class="text-gray-300 text-sm leading-relaxed">
-                        Apoyo en preparación tecnológica para apertura de tres nuevas sucursales. Instalación de redes, configuración de equipos y capacitación de personal en plazos críticos. Logré 99.2% de disponibilidad en sistemas.
+                    <p class="print-only print-contact">
+                        <span>contactovange02@gmail.com</span><span>linkedin.com/in/vangelis-ramos</span><span>github.com/Vangeum</span><span>vangeum.github.io/Portafolio</span><span>Santiago, Chile</span>
                     </p>
+
+                    <div class="hero-cta">
+                        <a class="btn btn-primary" href="#contacto">
+                            <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>
+                            Contactar
+                        </a>
+                        <a class="btn btn-ghost" href="cv/Vangelis-Ramos-CV.pdf" download>
+                            <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>
+                            Descargar CV
+                        </a>
+                    </div>
+
+                    <div class="hero-social">
+                        <a class="icon-btn" href="https://www.linkedin.com/in/vangelis-ramos/" target="_blank" rel="noopener" aria-label="LinkedIn (abre en una pestaña nueva)">
+                            <svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg>
+                        </a>
+                        <a class="icon-btn" href="https://github.com/Vangeum" target="_blank" rel="noopener" aria-label="GitHub (abre en una pestaña nueva)">
+                            <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>
+                        </a>
+                        <a class="icon-btn" href="mailto:contactovange02@gmail.com" aria-label="Enviar email">
+                            <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <aside class="status-card reveal" aria-label="Resumen profesional">
+                    <div class="status-head">
+                        <div class="dots" aria-hidden="true"><span></span><span></span><span></span></div>
+                        <span>~/vangelis/estado</span>
+                    </div>
+                    <dl class="status-body">
+                        <div class="status-row">
+                            <dt>estado</dt>
+                            <dd><span class="status-ok"><span class="pulse" aria-hidden="true"></span>operativo</span></dd>
+                        </div>
+                        <div class="status-row">
+                            <dt>rol</dt>
+                            <dd>Analista de Servicios y Experiencia Digital</dd>
+                        </div>
+                        <div class="status-row">
+                            <dt>empresa</dt>
+                            <dd>Grupo COMGRAP</dd>
+                        </div>
+                        <div class="status-row">
+                            <dt>enfoque</dt>
+                            <dd class="tags"><span class="tag">soporte-ti</span><span class="tag">python</span><span class="tag">ia-generativa</span></dd>
+                        </div>
+                    </dl>
+                    <div class="stats">
+                        <div class="stat"><strong>6 meses</strong><span>de practicante a analista</span></div>
+                        <div class="stat"><strong>11</strong><span>certificaciones verificables</span></div>
+                        <div class="stat"><strong>N1–N2</strong><span>soporte a usuarios</span></div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- 01 · PERFIL -->
+        <section class="section" id="perfil" aria-labelledby="perfil-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-kicker">01 / Perfil</span>
+                    <h2 id="perfil-title">Sobre mí</h2>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-text reveal">
+                        <p>Me formé en <strong>Ingeniería en Computación e Informática</strong> en la Universidad Andrés Bello y hoy trabajo como <strong>Analista de Servicios y Experiencia Digital en Grupo COMGRAP</strong>, donde doy soporte a usuarios de software de ingeniería y diseño como Autodesk, Adobe y Trimble.</p>
+                        <p>Entré a COMGRAP como practicante de soporte TI en enero de 2026. Al terminar la práctica me contrataron como Asistente Técnico y en julio pasé a mi cargo actual. En ese camino aprendí que el buen soporte no se trata solo de arreglar equipos: también es documentar, explicar con claridad y entender qué necesita cada persona para seguir trabajando.</p>
+                        <p>Fuera del día a día sigo formándome en inteligencia artificial, ingeniería de software y datos. Me interesa usar esas herramientas para automatizar procesos de servicio y tomar mejores decisiones con información concreta.</p>
+                    </div>
+
+                    <dl class="card facts reveal">
+                        <div class="fact">
+                            <dt>Ubicación</dt>
+                            <dd>Santiago, Chile</dd>
+                        </div>
+                        <div class="fact">
+                            <dt>Modalidad</dt>
+                            <dd>Híbrida o presencial</dd>
+                        </div>
+                        <div class="fact">
+                            <dt>Idiomas</dt>
+                            <dd>Español nativo · Inglés intermedio</dd>
+                        </div>
+                        <div class="fact">
+                            <dt>Me interesa</dt>
+                            <dd>Infraestructura TI, automatización e IA aplicada</dd>
+                        </div>
+                    </dl>
                 </div>
             </div>
         </section>
 
-        <!-- HABILIDADES SECTION -->
-        <section id="habilidades" class="mb-24">
-            <h2 class="section-title">Especialización Técnica</h2>
-            
-            <div class="grid md:grid-cols-2 gap-6 mb-8">
-                <div class="card-professional p-6">
-                    <h3 class="text-accent font-semibold text-sm uppercase mb-4 tracking-wide">Redes & Infraestructura</h3>
-                    <p class="text-gray-300 text-sm leading-relaxed">Arquitectura de redes, configuración de switches, routers, VPN, firewalls. Administración de servidores y continuidad operativa.</p>
+        <!-- 02 · TRAYECTORIA -->
+        <section class="section section-alt" id="trayectoria" aria-labelledby="trayectoria-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-kicker">02 / Trayectoria</span>
+                    <h2 id="trayectoria-title">Experiencia laboral</h2>
+                    <p>Tres cargos en la misma empresa en menos de un año: de la práctica a un rol de análisis de servicios.</p>
                 </div>
-                <div class="card-professional p-6">
-                    <h3 class="text-accent font-semibold text-sm uppercase mb-4 tracking-wide">Seguridad & Administración</h3>
-                    <p class="text-gray-300 text-sm leading-relaxed">Seguridad informática, Active Directory, gestión de permisos, políticas de acceso, auditoría y compliance.</p>
+
+                <article class="card company reveal">
+                    <div class="company-head">
+                        <div>
+                            <h3>Grupo COMGRAP</h3>
+                            <p class="company-meta">Providencia, Santiago</p>
+                        </div>
+                        <span class="period">ene 2026 — actualidad</span>
+                    </div>
+
+                    <div class="roles">
+                        <div class="role is-current">
+                            <div class="role-head">
+                                <h4>Analista de Servicios y Experiencia Digital</h4>
+                                <span class="period">jul 2026 — actualidad</span>
+                            </div>
+                            <div class="role-badges">
+                                <span class="badge badge-accent">Ascenso</span>
+                                <span class="badge">Jornada completa · Híbrido</span>
+                            </div>
+                            <p>Gestión de incidencias y soporte técnico a usuarios, sumando conocimientos de infraestructura y procesamiento de datos para mejorar la experiencia de quienes usan los servicios digitales de la empresa.</p>
+                        </div>
+
+                        <div class="role">
+                            <div class="role-head">
+                                <h4>Asistente Técnico · Soporte TI</h4>
+                                <span class="period">abr 2026 — jul 2026</span>
+                            </div>
+                            <div class="role-badges">
+                                <span class="badge badge-accent">Contratado tras la práctica</span>
+                                <span class="badge">Jornada completa · Presencial</span>
+                            </div>
+                            <ul class="bullets">
+                                <li>Soporte de primer y segundo nivel, con seguimiento de incidencias y requerimientos hasta su resolución.</li>
+                                <li>Soporte especializado en Autodesk (AutoCAD, Revit, Civil 3D), Adobe Creative Cloud y Trimble.</li>
+                                <li>Gestión, validación y seguimiento de licencias corporativas, con escalamiento a proveedores cuando fue necesario.</li>
+                                <li>Desarrollé una herramienta en Python para filtrar la información de licencias y documenté incidencias y soluciones para agilizar la atención.</li>
+                            </ul>
+                        </div>
+
+                        <div class="role">
+                            <div class="role-head">
+                                <h4>Practicante Profesional · Soporte TI</h4>
+                                <span class="period">ene 2026 — abr 2026</span>
+                            </div>
+                            <div class="role-badges">
+                                <span class="badge">Práctica profesional · Presencial</span>
+                            </div>
+                            <ul class="bullets">
+                                <li>Atención y resolución de incidencias de hardware y software.</li>
+                                <li>Mantenimiento de equipos y apoyo al equipo de soporte a usuarios.</li>
+                                <li>Mi desempeño durante la práctica llevó a mi contratación a jornada completa.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card company reveal">
+                    <div class="company-head">
+                        <div>
+                            <h3>Family Shop</h3>
+                            <p class="company-meta">Quilicura, Santiago · Retail</p>
+                        </div>
+                        <span class="period">nov 2023 — ene 2024</span>
+                    </div>
+
+                    <div class="roles">
+                        <div class="role">
+                            <div class="role-head">
+                                <h4>Personal de Soporte TI</h4>
+                                <span class="period">3 meses</span>
+                            </div>
+                            <div class="role-badges">
+                                <span class="badge">Jornada parcial · Presencial</span>
+                            </div>
+                            <ul class="bullets">
+                                <li>Soporte técnico a usuarios y resolución de problemas de equipos y sistemas.</li>
+                                <li>Instalación y configuración de computadores y puntos de venta (POS), además de redes LAN/WiFi y direccionamiento IP.</li>
+                                <li>Apoyo en la preparación tecnológica para la apertura de tres nuevas tiendas, con instalación de equipos y redes en terreno.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 03 · PROYECTOS -->
+        <section class="section" id="proyectos" aria-labelledby="proyectos-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-kicker">03 / Proyectos</span>
+                    <h2 id="proyectos-title">Proyectos y casos</h2>
+                    <p>Trabajo concreto: qué problema había, qué hice y qué cambió.</p>
                 </div>
-                <div class="card-professional p-6">
-                    <h3 class="text-accent font-semibold text-sm uppercase mb-4 tracking-wide">Desarrollo & Automatización</h3>
-                    <p class="text-gray-300 text-sm leading-relaxed">Python, scripting, automatización de procesos, desarrollo de herramientas corporativas y utilitarios.</p>
-                </div>
-                <div class="card-professional p-6">
-                    <h3 class="text-accent font-semibold text-sm uppercase mb-4 tracking-wide">Soporte Enterprise</h3>
-                    <p class="text-gray-300 text-sm leading-relaxed">Soporte a usuarios, ticketing, metodologías ITIL, gestión de incidentes y cambios, atención al cliente.</p>
+
+                <div class="projects">
+                    <article class="card project reveal">
+                        <div class="project-top">
+                            <span class="project-icon" aria-hidden="true"><svg class="icon"><use href="#i-key"/></svg></span>
+                            <span class="project-status">Uso interno · COMGRAP</span>
+                        </div>
+                        <h3>Filtro de licencias corporativas</h3>
+                        <dl class="case">
+                            <div><dt>Problema</dt><dd>Validar y dar seguimiento a las licencias de software de los usuarios implicaba revisar mucha información a mano.</dd></div>
+                            <div><dt>Solución</dt><dd>Una herramienta en Python que filtra y ordena los datos de licencias según lo que se necesita revisar.</dd></div>
+                            <div><dt>Resultado</dt><dd>Revisiones más rápidas y ordenadas dentro de la gestión de licencias del equipo de soporte.</dd></div>
+                        </dl>
+                        <div class="tags"><span class="tag">python</span><span class="tag">automatización</span><span class="tag">licenciamiento</span></div>
+                    </article>
+
+                    <article class="card project reveal">
+                        <div class="project-top">
+                            <span class="project-icon" aria-hidden="true"><svg class="icon"><use href="#i-book"/></svg></span>
+                            <span class="project-status">Uso interno · COMGRAP</span>
+                        </div>
+                        <h3>Material técnico para usuarios</h3>
+                        <dl class="case">
+                            <div><dt>Problema</dt><dd>Las mismas consultas se repetían y cada caso dependía de que alguien de soporte estuviera disponible.</dd></div>
+                            <div><dt>Solución</dt><dd>Material técnico educativo para la plataforma corporativa y documentación de incidencias con sus soluciones.</dd></div>
+                            <div><dt>Resultado</dt><dd>Una base de conocimiento que agiliza la atención y ayuda a que los usuarios resuelvan dudas por su cuenta.</dd></div>
+                        </dl>
+                        <div class="tags"><span class="tag">documentación</span><span class="tag">formación</span><span class="tag">soporte</span></div>
+                    </article>
+
+                    <article class="card project reveal">
+                        <div class="project-top">
+                            <span class="project-icon" aria-hidden="true"><svg class="icon"><use href="#i-layout"/></svg></span>
+                            <span class="project-status">Público · GitHub</span>
+                        </div>
+                        <h3>Este portafolio</h3>
+                        <dl class="case">
+                            <div><dt>Objetivo</dt><dd>Presentar mi perfil de forma clara, rápida y accesible, sin depender de frameworks.</dd></div>
+                            <div><dt>Cómo</dt><dd>HTML semántico, CSS propio con modo claro y oscuro, JavaScript liviano y una versión imprimible que funciona como CV.</dd></div>
+                            <div><dt>Dónde</dt><dd>Publicado con GitHub Pages y con el código abierto en mi repositorio.</dd></div>
+                        </dl>
+                        <div class="tags"><span class="tag">html</span><span class="tag">css</span><span class="tag">javascript</span><span class="tag">github-pages</span></div>
+                        <a class="project-link" href="https://github.com/Vangeum/Portafolio" target="_blank" rel="noopener">
+                            Ver código <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+                        </a>
+                    </article>
+
+                    <article class="card project project-soon reveal">
+                        <div class="project-top">
+                            <span class="project-icon" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span>
+                            <span class="project-status">En preparación</span>
+                        </div>
+                        <h3>Próximos proyectos públicos</h3>
+                        <p>Estoy preparando proyectos abiertos con Python e IA generativa, basados en lo que aprendí en mis certificaciones. Los iré publicando en GitHub.</p>
+                        <a class="project-link" href="https://github.com/Vangeum" target="_blank" rel="noopener">
+                            Seguir en GitHub <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+                        </a>
+                    </article>
                 </div>
             </div>
+        </section>
 
-            <div class="card-professional p-6">
-                <h3 class="text-accent font-semibold text-sm uppercase mb-6 tracking-wide">Stack Técnico</h3>
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
-                    <div class="text-gray-300">
-                        <span class="inline-block bg-gray-800 px-3 py-1 rounded">AutoCAD</span>
+        <!-- 04 · HABILIDADES -->
+        <section class="section section-alt" id="habilidades" aria-labelledby="habilidades-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-kicker">04 / Habilidades</span>
+                    <h2 id="habilidades-title">Con qué trabajo</h2>
+                    <p>Herramientas y conocimientos que uso en el trabajo o que respaldan mis estudios y certificaciones.</p>
+                </div>
+
+                <div class="skills">
+                    <div class="card skill-group reveal">
+                        <div class="skill-group-head">
+                            <span class="project-icon" aria-hidden="true"><svg class="icon"><use href="#i-headset"/></svg></span>
+                            <h3>Soporte y servicios TI</h3>
+                        </div>
+                        <ul class="chips">
+                            <li class="chip">Soporte N1 y N2</li>
+                            <li class="chip">Gestión de incidencias</li>
+                            <li class="chip">Requerimientos</li>
+                            <li class="chip">Escalamiento a proveedores</li>
+                            <li class="chip">Documentación</li>
+                            <li class="chip">Atención a usuarios</li>
+                        </ul>
                     </div>
-                    <div class="text-gray-300">
-                        <span class="inline-block bg-gray-800 px-3 py-1 rounded">Revit</span>
+
+                    <div class="card skill-group reveal">
+                        <div class="skill-group-head">
+                            <span class="project-icon" aria-hidden="true"><svg class="icon"><use href="#i-layers"/></svg></span>
+                            <h3>Software de ingeniería y diseño</h3>
+                        </div>
+                        <ul class="chips">
+                            <li class="chip">AutoCAD</li>
+                            <li class="chip">Revit</li>
+                            <li class="chip">Civil 3D</li>
+                            <li class="chip">Adobe Creative Cloud</li>
+                            <li class="chip">Trimble</li>
+                            <li class="chip">Gestión de licencias</li>
+                            <li class="chip">Microsoft Office</li>
+                        </ul>
                     </div>
-                    <div class="text-gray-300">
-                        <span class="inline-block bg-gray-800 px-3 py-1 rounded">Adobe CC</span>
+
+                    <div class="card skill-group reveal">
+                        <div class="skill-group-head">
+                            <span class="project-icon" aria-hidden="true"><svg class="icon"><use href="#i-network"/></svg></span>
+                            <h3>Infraestructura y hardware</h3>
+                        </div>
+                        <ul class="chips">
+                            <li class="chip">Mantenimiento de equipos</li>
+                            <li class="chip">Diagnóstico de hardware</li>
+                            <li class="chip">Redes LAN / WiFi</li>
+                            <li class="chip">Direccionamiento IP</li>
+                            <li class="chip">Puntos de venta (POS)</li>
+                        </ul>
                     </div>
-                    <div class="text-gray-300">
-                        <span class="inline-block bg-gray-800 px-3 py-1 rounded">Python</span>
+
+                    <div class="card skill-group reveal">
+                        <div class="skill-group-head">
+                            <span class="project-icon" aria-hidden="true"><svg class="icon"><use href="#i-code"/></svg></span>
+                            <h3>Programación y datos</h3>
+                        </div>
+                        <ul class="chips">
+                            <li class="chip">Python</li>
+                            <li class="chip">SQL</li>
+                            <li class="chip">Java</li>
+                            <li class="chip">C / C++</li>
+                            <li class="chip">JavaScript</li>
+                            <li class="chip">HTML y CSS</li>
+                            <li class="chip">R</li>
+                        </ul>
                     </div>
-                    <div class="text-gray-300">
-                        <span class="inline-block bg-gray-800 px-3 py-1 rounded">Windows Server</span>
+
+                    <div class="card skill-group reveal">
+                        <div class="skill-group-head">
+                            <span class="project-icon" aria-hidden="true"><svg class="icon"><use href="#i-sparkles"/></svg></span>
+                            <h3>IA generativa y datos</h3>
+                        </div>
+                        <ul class="chips">
+                            <li class="chip">Prompt engineering</li>
+                            <li class="chip">Apps con IA en Python</li>
+                            <li class="chip">Machine Learning</li>
+                            <li class="chip">Procesamiento de datos</li>
+                            <li class="chip">Big Data</li>
+                        </ul>
                     </div>
-                    <div class="text-gray-300">
-                        <span class="inline-block bg-gray-800 px-3 py-1 rounded">Linux</span>
-                    </div>
-                    <div class="text-gray-300">
-                        <span class="inline-block bg-gray-800 px-3 py-1 rounded">Cisco IOS</span>
-                    </div>
-                    <div class="text-gray-300">
-                        <span class="inline-block bg-gray-800 px-3 py-1 rounded">Active Directory</span>
-                    </div>
-                    <div class="text-gray-300">
-                        <span class="inline-block bg-gray-800 px-3 py-1 rounded">AWS Basics</span>
+
+                    <div class="card skill-group reveal">
+                        <div class="skill-group-head">
+                            <span class="project-icon" aria-hidden="true"><svg class="icon"><use href="#i-users"/></svg></span>
+                            <h3>Habilidades interpersonales</h3>
+                        </div>
+                        <ul class="chips">
+                            <li class="chip">Comunicación efectiva</li>
+                            <li class="chip">Trabajo colaborativo</li>
+                            <li class="chip">Resolución de problemas</li>
+                            <li class="chip">Escucha activa</li>
+                            <li class="chip">Aprendizaje continuo</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- EDUCACIÓN SECTION -->
-        <section id="educacion" class="mb-24">
-            <h2 class="section-title">Educación & Certificaciones</h2>
-            
-            <div class="mb-8">
-                <h3 class="text-accent font-semibold text-sm uppercase mb-4 tracking-wide">Educación Formal</h3>
-                <div class="card-professional p-6">
-                    <p class="text-white font-semibold mb-1">Ingeniería en Computación e Informática</p>
-                    <p class="text-gray-400 text-sm">Universidad Andrés Bello (UNAB)</p>
+        <!-- 05 · EDUCACIÓN -->
+        <section class="section" id="educacion" aria-labelledby="educacion-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-kicker">05 / Educación</span>
+                    <h2 id="educacion-title">Formación académica</h2>
+                </div>
+
+                <div class="edu-grid">
+                    <article class="card edu reveal">
+                        <span class="period">mar 2021 — jul 2026</span>
+                        <h3>Ingeniería en Computación e Informática</h3>
+                        <p class="edu-school">Universidad Andrés Bello</p>
+                        <p>Formación en desarrollo de software, algoritmos, bases de datos y sistemas computacionales.</p>
+                    </article>
+                    <article class="card edu reveal">
+                        <span class="period">2015 — 2020</span>
+                        <h3>Enseñanza Media Científico-Humanista</h3>
+                        <p class="edu-school">Liceo Nacional de Maipú</p>
+                        <p>Electivo en Física.</p>
+                    </article>
                 </div>
             </div>
+        </section>
 
-            <div>
-                <h3 class="text-accent font-semibold text-sm uppercase mb-4 tracking-wide">Certificaciones</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="card-professional p-4 flex justify-between items-center">
-                        <span class="text-gray-300 text-sm">Software Engineering Introduction</span>
-                        <span class="text-accent font-medium text-xs ml-4">IBM</span>
+        <!-- 06 · CERTIFICACIONES -->
+        <section class="section section-alt" id="certificaciones" aria-labelledby="certificaciones-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-kicker">06 / Certificaciones</span>
+                    <h2 id="certificaciones-title">Certificaciones</h2>
+                    <p>Once credenciales de IBM, Autodesk, Coursera y la Universidad Autónoma de Barcelona. Todas se pueden verificar.</p>
+                </div>
+
+                <div class="filters reveal" role="group" aria-label="Filtrar certificaciones">
+                    <button class="filter" type="button" aria-pressed="true" data-filter="all">Todas <span class="count">11</span></button>
+                    <button class="filter" type="button" aria-pressed="false" data-filter="ia">IA y datos <span class="count">8</span></button>
+                    <button class="filter" type="button" aria-pressed="false" data-filter="software">Ingeniería de software <span class="count">2</span></button>
+                    <button class="filter" type="button" aria-pressed="false" data-filter="industria">Autodesk <span class="count">1</span></button>
+                </div>
+
+                <ul class="certs">
+                    <li class="card cert" data-cat="industria">
+                        <span class="issuer" aria-hidden="true">ADSK</span>
+                        <div>
+                            <h3>Level UP Essentials Entry</h3>
+                            <p class="cert-meta">Autodesk · jun 2026</p>
+                        </div>
+                        <a class="cert-link" href="https://www.credly.com/badges/d77e4a15-ce9a-4416-beea-c29c0c789d27/public_url" target="_blank" rel="noopener">Verificar <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg><span class="sr-only"> Level UP Essentials Entry (abre en una pestaña nueva)</span></a>
+                    </li>
+                    <li class="card cert" data-cat="ia">
+                        <span class="issuer" aria-hidden="true">IBM</span>
+                        <div>
+                            <h3>Machine Learning for Data Science Projects</h3>
+                            <p class="cert-meta">IBM · jun 2025</p>
+                        </div>
+                        <a class="cert-link" href="https://www.credly.com/badges/94b90262-249b-486c-9abf-287ad592fd9b/public_url" target="_blank" rel="noopener">Verificar <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg><span class="sr-only"> Machine Learning for Data Science Projects (abre en una pestaña nueva)</span></a>
+                    </li>
+                    <li class="card cert" data-cat="ia">
+                        <span class="issuer" aria-hidden="true">IBM</span>
+                        <div>
+                            <h3>Building Generative AI-Powered Applications with Python</h3>
+                            <p class="cert-meta">IBM · Coursera · jun 2025</p>
+                        </div>
+                        <a class="cert-link" href="https://www.coursera.org/account/accomplishments/verify/1TE3HR0282TC" target="_blank" rel="noopener">Verificar <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg><span class="sr-only"> Building Generative AI-Powered Applications with Python (abre en una pestaña nueva)</span></a>
+                    </li>
+                    <li class="card cert" data-cat="ia">
+                        <span class="issuer" aria-hidden="true">IBM</span>
+                        <div>
+                            <h3>IA Generativa: eleve su carrera en el desarrollo de software</h3>
+                            <p class="cert-meta">IBM · Coursera · jun 2025</p>
+                        </div>
+                        <a class="cert-link" href="https://www.coursera.org/account/accomplishments/verify/TM1UDBLWKPNM" target="_blank" rel="noopener">Verificar <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg><span class="sr-only"> IA Generativa: eleve su carrera en el desarrollo de software (abre en una pestaña nueva)</span></a>
+                    </li>
+                    <li class="card cert" data-cat="software">
+                        <span class="issuer" aria-hidden="true">IBM</span>
+                        <div>
+                            <h3>Guía profesional para desarrolladores de software y preparación de entrevistas</h3>
+                            <p class="cert-meta">IBM · Coursera · jun 2025</p>
+                        </div>
+                        <a class="cert-link" href="https://www.coursera.org/account/accomplishments/verify/7VNJQHPJCJTR" target="_blank" rel="noopener">Verificar <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg><span class="sr-only"> Guía profesional para desarrolladores de software (abre en una pestaña nueva)</span></a>
+                    </li>
+                    <li class="card cert" data-cat="ia">
+                        <span class="issuer" aria-hidden="true">C</span>
+                        <div>
+                            <h3>Generative AI Essentials</h3>
+                            <p class="cert-meta">Coursera · abr 2025</p>
+                        </div>
+                        <a class="cert-link" href="https://www.credly.com/badges/d9e050fb-ec1c-4020-a8a0-dd3b70aaa463/public_url" target="_blank" rel="noopener">Verificar <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg><span class="sr-only"> Generative AI Essentials (abre en una pestaña nueva)</span></a>
+                    </li>
+                    <li class="card cert" data-cat="ia">
+                        <span class="issuer" aria-hidden="true">IBM</span>
+                        <div>
+                            <h3>IA Generativa: Conceptos básicos de ingeniería de instrucciones</h3>
+                            <p class="cert-meta">IBM · Coursera · abr 2025</p>
+                        </div>
+                        <a class="cert-link" href="https://www.coursera.org/account/accomplishments/verify/19RMN389ZODX" target="_blank" rel="noopener">Verificar <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg><span class="sr-only"> IA Generativa: Conceptos básicos de ingeniería de instrucciones (abre en una pestaña nueva)</span></a>
+                    </li>
+                    <li class="card cert" data-cat="ia">
+                        <span class="issuer" aria-hidden="true">IBM</span>
+                        <div>
+                            <h3>IA Generativa: Introducción y Aplicaciones</h3>
+                            <p class="cert-meta">IBM · Coursera · abr 2025</p>
+                        </div>
+                        <a class="cert-link" href="https://www.coursera.org/account/accomplishments/verify/JAII0WEASDQM" target="_blank" rel="noopener">Verificar <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg><span class="sr-only"> IA Generativa: Introducción y Aplicaciones (abre en una pestaña nueva)</span></a>
+                    </li>
+                    <li class="card cert" data-cat="ia">
+                        <span class="issuer" aria-hidden="true">IBM</span>
+                        <div>
+                            <h3>Introducción a la inteligencia artificial (IA)</h3>
+                            <p class="cert-meta">IBM · Coursera · abr 2025</p>
+                        </div>
+                        <a class="cert-link" href="https://www.coursera.org/account/accomplishments/verify/1QT1LSJYVE40" target="_blank" rel="noopener">Verificar <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg><span class="sr-only"> Introducción a la inteligencia artificial (abre en una pestaña nueva)</span></a>
+                    </li>
+                    <li class="card cert" data-cat="software">
+                        <span class="issuer" aria-hidden="true">IBM</span>
+                        <div>
+                            <h3>Introducción a la ingeniería de software</h3>
+                            <p class="cert-meta">IBM · Coursera · mar 2025</p>
+                        </div>
+                        <a class="cert-link" href="https://www.coursera.org/account/accomplishments/verify/EWYXBR1DM2QW" target="_blank" rel="noopener">Verificar <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg><span class="sr-only"> Introducción a la ingeniería de software (abre en una pestaña nueva)</span></a>
+                    </li>
+                    <li class="card cert" data-cat="ia">
+                        <span class="issuer" aria-hidden="true">UAB</span>
+                        <div>
+                            <h3>Big Data: el impacto de los datos masivos en la sociedad actual</h3>
+                            <p class="cert-meta">Universidad Autónoma de Barcelona · Coursera</p>
+                        </div>
+                        <a class="cert-link" href="https://www.coursera.org/account/accomplishments/verify/55RKPQJUYGQQ" target="_blank" rel="noopener">Verificar <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg><span class="sr-only"> Big Data (abre en una pestaña nueva)</span></a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section class="section contact" id="contacto" aria-labelledby="contacto-title">
+            <div class="container">
+                <div class="card contact-card reveal">
+                    <span class="section-kicker">Contacto</span>
+                    <h2 id="contacto-title">¿Conversamos?</h2>
+                    <p>Si buscas a alguien para servicios TI, soporte o automatización, o quieres conversar sobre un proyecto, escríbeme. Respondo por email o LinkedIn.</p>
+                    <div class="contact-actions">
+                        <a class="btn btn-primary" href="mailto:contactovange02@gmail.com">
+                            <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>
+                            contactovange02@gmail.com
+                        </a>
+                        <button class="btn btn-ghost" type="button" data-copy="contactovange02@gmail.com">
+                            <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg>
+                            Copiar email
+                        </button>
+                        <a class="btn btn-ghost" href="https://www.linkedin.com/in/vangelis-ramos/" target="_blank" rel="noopener">
+                            <svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg>
+                            LinkedIn
+                        </a>
                     </div>
-                    <div class="card-professional p-4 flex justify-between items-center">
-                        <span class="text-gray-300 text-sm">Building Generative AI Apps with Python</span>
-                        <span class="text-accent font-medium text-xs ml-4">IBM</span>
-                    </div>
-                    <div class="card-professional p-4 flex justify-between items-center">
-                        <span class="text-gray-300 text-sm">Big Data: Impacto de Datos Masivos</span>
-                        <span class="text-accent font-medium text-xs ml-4">UAB</span>
-                    </div>
-                    <div class="card-professional p-4 flex justify-between items-center">
-                        <span class="text-gray-300 text-sm">Generative AI: Prompt Engineering</span>
-                        <span class="text-accent font-medium text-xs ml-4">IBM</span>
-                    </div>
+                    <p class="copy-feedback" role="status" aria-live="polite" data-copy-feedback></p>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <!-- FOOTER -->
-    <footer class="bg-[#0a0e27] border-t border-gray-800 no-print py-12">
-        <div class="max-w-5xl mx-auto px-6 text-center">
-            <div class="flex justify-center gap-8 mb-8">
-                <a href="https://linkedin.com/in/vangelis-ramos" class="text-gray-500 hover:text-gray-300 transition">
-                    <i class="fab fa-linkedin text-2xl"></i>
-                </a>
-                <a href="mailto:contactovange02@gmail.com" class="text-gray-500 hover:text-gray-300 transition">
-                    <i class="fas fa-envelope text-2xl"></i>
-                </a>
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p>© <span data-year>2026</span> Vangelis Ramos Ríos · Hecho a mano con HTML, CSS y JavaScript.</p>
+            <div class="footer-links">
+                <a class="icon-btn" href="https://www.linkedin.com/in/vangelis-ramos/" target="_blank" rel="noopener" aria-label="LinkedIn (abre en una pestaña nueva)"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
+                <a class="icon-btn" href="https://github.com/Vangeum" target="_blank" rel="noopener" aria-label="GitHub (abre en una pestaña nueva)"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a>
+                <a class="icon-btn" href="#inicio" aria-label="Volver arriba"><svg class="icon" aria-hidden="true"><use href="#i-up"/></svg></a>
             </div>
-            <p class="text-xs text-gray-600">© 2026 Vangelis Ramos Ríos · Ingeniería en Computación e Informática</p>
         </div>
     </footer>
 
+    <script src="assets/js/main.js" defer></script>
 </body>
 </html>
