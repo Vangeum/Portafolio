@@ -1,6 +1,6 @@
 # Portafolio · Vangelis Ramos Ríos
 
-Portafolio técnico de **Vangelis Ramos Ríos** (Santiago, Chile). Vengo del soporte TI y voy hacia DevOps. Mi tesis fue un agente de soporte con IA local para atención al cliente. Hoy trabajo como Analista de Servicios y Experiencia Digital en Grupo COMGRAP.
+Portafolio técnico de **Vangelis Ramos Ríos**, Ingeniero en Computación e Informática (Universidad Andrés Bello), de Santiago, Chile. Vengo del soporte TI y voy hacia DevOps. Mi tesis fue un agente de soporte con IA local para atención al cliente. Hoy trabajo como Analista de Servicios y Experiencia Digital en Grupo COMGRAP.
 
 **Ver en vivo:** https://vangeum.github.io/Portafolio/
 **CV en PDF:** [cv/Vangelis-Ramos-CV.pdf](cv/Vangelis-Ramos-CV.pdf)
