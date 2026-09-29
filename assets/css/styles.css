@@ -1261,29 +1261,63 @@ svg {
   }
 }
 
-/* ---------- Impresión (provisoria, se ajusta al cerrar el diseño) ---------- */
+/* ==========================================================================
+   Impresión: CV de 2 páginas en blanco, con el diagrama como plano en línea
+   ========================================================================== */
+
+.print-only {
+  display: none;
+}
 
 @media print {
+  @page {
+    size: A4;
+    margin: 13mm 14mm 14mm;
+  }
+
   :root,
   :root[data-theme="plano"] {
     --bg: #fff;
     --bg-alt: #fff;
     --ink: #111;
-    --ink-soft: #333;
-    --muted: #555;
+    --ink-soft: #2e2e2a;
+    --muted: #55534b;
     --rule: #111;
-    --rule-soft: #ccc;
-    --accent: #b83800;
+    --rule-soft: #d6d3ca;
+    --accent: #e04400;
     --accent-text: #b83800;
+    --bp-bg: #fff;
+    --bp-line: #6b6a64;
+    --bp-ink: #111;
+    --bp-soft: #55534b;
+    --bp-grid: transparent;
+    --bp-accent: #b83800;
     color-scheme: light;
+  }
+
+  body {
+    font-size: 9.5pt;
+    line-height: 1.45;
   }
 
   .nav,
   .mobile-menu,
   .skip-link,
+  .hero::before,
+  .hero-top,
   .hero-cta,
-  .contact {
+  .cursor,
+  .section-lead:not(.keep-print),
+  .route,
+  .diagram-v,
+  .blueprint-legend,
+  .contact,
+  .footer {
     display: none !important;
+  }
+
+  .print-only {
+    display: block;
   }
 
   .js .line > span,
@@ -1297,14 +1331,288 @@ svg {
     transform: none !important;
   }
 
-  .hero {
-    padding-top: 0;
+  .diagram .boundary {
+    animation: none;
   }
 
-  .blueprint,
+  .diagram .packet,
+  .diagram .packet-back {
+    display: none;
+  }
+
+  .container {
+    max-width: none;
+    padding: 0;
+  }
+
+  /* Encabezado */
+  .hero {
+    padding: 0 0 8pt;
+  }
+
+  .hero-name {
+    margin: 0;
+    font-size: 30pt;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+  }
+
+  .hero-name .line {
+    display: inline;
+  }
+
+  .hero-name .line > span {
+    display: inline;
+  }
+
+  .hero-name .line + .line::before {
+    content: " ";
+  }
+
+  .print-contact {
+    margin-top: 6pt;
+    font-size: 8pt;
+    color: var(--ink-soft);
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20pt;
+    margin-top: 10pt;
+  }
+
+  .hero-statement {
+    max-width: none;
+    font-size: 11pt;
+    line-height: 1.35;
+  }
+
+  .hero-statement em {
+    background-size: 100% 0.12em;
+  }
+
+  .sheet-row {
+    grid-template-columns: 62pt 1fr;
+    gap: 8pt;
+    padding: 3pt 0;
+  }
+
+  .sheet-row dd {
+    font-size: 8.5pt;
+  }
+
+  .label {
+    font-size: 6.8pt;
+  }
+
+  /* Secciones */
+  .section {
+    padding: 10pt 0 2pt;
+    background: none !important;
+  }
+
+  .section-head {
+    margin-bottom: 8pt;
+    gap: 4pt;
+    break-after: avoid;
+  }
+
+  .section-bar {
+    padding-bottom: 4pt;
+    font-size: 7pt;
+  }
+
+  .section-title {
+    margin-top: 4pt;
+    max-width: none;
+    font-size: 15pt;
+    letter-spacing: -0.03em;
+  }
+
+  .section-lead.keep-print {
+    max-width: none;
+    margin-top: 2pt;
+    font-size: 9.5pt;
+  }
+
+  .thesis-meta {
+    margin-top: 2pt;
+    font-size: 7pt;
+  }
+
+  /* Tesis */
+  .blueprint {
+    border-color: var(--rule-soft);
+    break-inside: avoid;
+  }
+
+  .blueprint-bar {
+    padding: 4pt 8pt;
+    font-size: 6.5pt;
+    border-bottom-color: var(--rule-soft);
+    color: var(--muted);
+  }
+
+  .diagram {
+    padding: 2pt 8pt;
+  }
+
+  .diagram-h {
+    display: block !important;
+    max-height: 150pt;
+    margin: 0 auto;
+  }
+
+  .thesis-cols {
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 8pt;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+
+  .thesis-col,
+  .thesis-col + .thesis-col {
+    padding: 6pt 10pt 6pt 0;
+    border-bottom: 0;
+  }
+
+  .thesis-col + .thesis-col {
+    padding-left: 10pt;
+    border-left: 1px solid var(--rule-soft);
+  }
+
+  .thesis-col h3 {
+    margin: 2pt 0;
+    font-size: 10pt;
+  }
+
+  .thesis-col p {
+    font-size: 8.5pt;
+  }
+
+  .components {
+    margin-top: 6pt;
+    gap: 4pt;
+  }
+
+  .chip {
+    padding: 1pt 5pt;
+    font-size: 7pt;
+  }
+
+  /* Experiencia */
+  .xp-row {
+    grid-template-columns: 78pt 1fr 1.2fr;
+    gap: 2pt 14pt;
+    padding: 6pt 0;
+  }
+
+  .xp-role {
+    font-size: 10pt;
+  }
+
+  .xp-when {
+    padding-top: 1pt;
+    font-size: 7.5pt;
+  }
+
+  .xp-org,
+  .xp-desc {
+    font-size: 8.5pt;
+  }
+
+  .xp-org {
+    margin-top: 1pt;
+  }
+
+  .tag {
+    font-size: 6pt;
+    padding: 0 4pt;
+  }
+
+  /* Habilidades */
+  .skills {
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 0;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+
+  .skill-col,
+  .skill-col + .skill-col {
+    padding: 6pt 10pt 6pt 0;
+    border-bottom: 0;
+  }
+
+  .skill-col + .skill-col {
+    padding-left: 10pt;
+    border-left: 1px solid var(--rule-soft);
+  }
+
+  .skill-col ul {
+    gap: 1pt;
+    margin-top: 4pt;
+  }
+
+  .skill-col li {
+    font-size: 8.5pt;
+  }
+
+  /* Formación y certificaciones */
+  .edu-item {
+    grid-template-columns: 78pt 1fr 1.2fr;
+    gap: 2pt 14pt;
+    padding: 5pt 0;
+  }
+
+  .edu-item h3 {
+    font-size: 10pt;
+    line-height: 1.25;
+  }
+
+  .edu-item p {
+    font-size: 8.5pt;
+  }
+
+  .certs-label {
+    margin: 10pt 0 4pt !important;
+  }
+
+  .certs {
+    columns: 2;
+    column-gap: 16pt;
+    border-top: 1px solid var(--rule);
+    padding-top: 4pt;
+  }
+
+  .cert {
+    display: block;
+    padding: 2pt 0;
+    border: 0;
+    break-inside: avoid;
+  }
+
+  .cert-date,
+  .cert .link-arrow {
+    display: none;
+  }
+
+  .cert-name {
+    font-size: 8.5pt;
+    line-height: 1.3;
+  }
+
+  .cert-org {
+    display: inline;
+    font-size: 7.5pt;
+  }
+
+  .cert-org::before {
+    content: " — ";
+  }
+
   .xp-row,
-  .cert,
-  .stop {
+  .edu-item,
+  .skill-col,
+  .thesis-col {
     break-inside: avoid;
   }
 }

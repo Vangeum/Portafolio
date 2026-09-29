@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#0a0d16"/>
-  <rect x="1.5" y="1.5" width="61" height="61" rx="12.5" fill="none" stroke="#8b93ff" stroke-opacity="0.45" stroke-width="3"/>
-  <text x="32" y="41" text-anchor="middle" font-family="Consolas, 'JetBrains Mono', monospace" font-size="26" font-weight="700" fill="#8b93ff">VR</text>
+  <rect width="64" height="64" fill="#f3f0e8"/>
+  <rect x="2" y="2" width="60" height="60" fill="none" stroke="#16150f" stroke-width="4"/>
+  <text x="29" y="43" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="700" letter-spacing="-1.5" fill="#16150f">VR</text>
+  <rect x="47" y="37" width="7" height="7" fill="#ff4d00"/>
 </svg>

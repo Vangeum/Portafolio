@@ -1,6 +1,6 @@
 # Portafolio · Vangelis Ramos Ríos
 
-Portafolio profesional de **Vangelis Ramos Ríos**, Analista de Servicios y Experiencia Digital en Grupo COMGRAP (Santiago, Chile). Trabajo en soporte TI y software de ingeniería (Autodesk, Adobe, Trimble), y automatizo con Python e IA generativa.
+Portafolio técnico de **Vangelis Ramos Ríos** (Santiago, Chile). Vengo del soporte TI y voy hacia DevOps. Mi tesis fue un agente de soporte con IA local para atención al cliente. Hoy trabajo como Analista de Servicios y Experiencia Digital en Grupo COMGRAP.
 
 **Ver en vivo:** https://vangeum.github.io/Portafolio/
 **CV en PDF:** [cv/Vangelis-Ramos-CV.pdf](cv/Vangelis-Ramos-CV.pdf)
@@ -9,11 +9,11 @@ Portafolio profesional de **Vangelis Ramos Ríos**, Analista de Servicios y Expe
 
 ## Qué incluye
 
-- Trayectoria laboral, desde la práctica profesional hasta el cargo actual
-- Proyectos presentados como casos (problema, solución y resultado)
-- Habilidades agrupadas por área
+- La tesis como proyecto principal, con un diagrama animado de su arquitectura
+- Experiencia en soporte TI, desde la práctica profesional hasta el cargo actual
+- La ruta hacia DevOps y las habilidades agrupadas por área
 - 11 certificaciones con enlace de verificación (IBM, Autodesk, Coursera y UAB)
-- Modo oscuro y claro, con la preferencia guardada en el navegador
+- Dos modos visuales: **papel** (manual técnico) y **plano** (blueprint), con la preferencia guardada en el navegador
 - Versión imprimible que funciona como CV de 2 páginas
 
 ## Tecnología
@@ -21,8 +21,9 @@ Portafolio profesional de **Vangelis Ramos Ríos**, Analista de Servicios y Expe
 Sitio estático sin frameworks ni paso de compilación:
 
 - **HTML** semántico con metadatos para SEO, Open Graph y schema.org
-- **CSS** propio con variables para los dos temas, diseño responsive desde 360 px y estilos de impresión
-- **JavaScript** liviano sin dependencias: menú móvil, cambio de tema, filtro de certificaciones y animaciones que respetan `prefers-reduced-motion`
+- **CSS** propio con variables para los dos modos, diseño responsive desde 360 px y estilos de impresión
+- **SVG** animado para el diagrama de la tesis, con versión horizontal y vertical
+- **JavaScript** liviano sin dependencias: menú móvil, cambio de modo, revelado al hacer scroll y progreso de la ruta. Todas las animaciones respetan `prefers-reduced-motion`
 - Publicado con **GitHub Pages**
 
 ```
