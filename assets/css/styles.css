@@ -673,11 +673,35 @@ svg {
 
 /* ---------- Tesis ---------- */
 
-.thesis-meta {
+.project + .project {
+  margin-top: clamp(72px, 10vw, 128px);
+}
+
+.project-head {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.project-bar {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 24px;
-  margin-top: 18px;
+  justify-content: space-between;
+  gap: 4px 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--rule-soft);
+  color: var(--muted);
+}
+
+.project-title {
+  margin-top: 12px;
+  font-size: clamp(1.8rem, 4.2vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+}
+
+.project-head .section-lead {
+  margin-top: 4px;
 }
 
 .blueprint {
@@ -745,6 +769,11 @@ svg {
 
 .diagram .node-key {
   stroke: var(--bp-accent);
+}
+
+.diagram .node-add {
+  stroke-dasharray: 5 4;
+  fill: transparent;
 }
 
 .diagram .wire {
@@ -1013,10 +1042,6 @@ svg {
   border-color: var(--accent);
 }
 
-.stop-goal::before {
-  border-style: dashed;
-}
-
 .stop h3 {
   margin: 6px 0 6px;
   font-size: 1.35rem;
@@ -1027,6 +1052,18 @@ svg {
   color: var(--ink-soft);
   font-size: 0.98rem;
   max-width: 34ch;
+}
+
+.stop-proof {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--accent-text);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.stop-proof:hover {
+  border-bottom-color: currentColor;
 }
 
 @media (min-width: 900px) {
@@ -1078,10 +1115,6 @@ svg {
 
 .skill-col li {
   font-size: 1rem;
-}
-
-.skill-col.is-learning li {
-  color: var(--muted);
 }
 
 @media (min-width: 800px) {
@@ -1186,6 +1219,14 @@ svg {
   font-weight: 700;
   line-height: 0.92;
   letter-spacing: -0.055em;
+}
+
+.contact-lead {
+  max-width: 40ch;
+  margin-top: clamp(20px, 3vw, 32px);
+  color: var(--ink-soft);
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  line-height: 1.4;
 }
 
 .contact-mail {
@@ -1308,7 +1349,11 @@ svg {
   .hero-cta,
   .cursor,
   .section-lead:not(.keep-print),
-  .route,
+  .route-track,
+  .stop-proof,
+  .blueprint-crm,
+  #crm .thesis-cols,
+  .components,
   .diagram-v,
   .blueprint-legend,
   .contact,
@@ -1435,9 +1480,50 @@ svg {
     font-size: 9.5pt;
   }
 
-  .thesis-meta {
-    margin-top: 2pt;
+  .project + .project {
+    margin-top: 10pt;
+  }
+
+  .project-head {
+    gap: 2pt;
+    margin-bottom: 6pt;
+    break-inside: avoid;
+  }
+
+  .project-bar {
+    padding-bottom: 3pt;
     font-size: 7pt;
+  }
+
+  .project-title {
+    margin-top: 2pt;
+    font-size: 12pt;
+  }
+
+  /* Capacidades en 4 columnas */
+  .route {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10pt;
+    margin-bottom: 8pt;
+  }
+
+  .stop,
+  .stop:last-child {
+    padding: 0;
+  }
+
+  .stop::before {
+    display: none;
+  }
+
+  .stop h3 {
+    margin: 2pt 0;
+    font-size: 9.5pt;
+  }
+
+  .stop p {
+    font-size: 8pt;
   }
 
   /* Tesis */
@@ -1459,7 +1545,7 @@ svg {
 
   .diagram-h {
     display: block !important;
-    max-height: 150pt;
+    max-height: 135pt;
     margin: 0 auto;
   }
 
