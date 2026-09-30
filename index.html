@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vangelis Ramos Ríos · Ingeniero en Computación e Informática</title>
-    <meta name="description" content="Portafolio de Vangelis Ramos Ríos, Ingeniero en Computación e Informática (UNAB). Software a medida, automatización con Python e IA local, con base en soporte e infraestructura TI. Proyectos: agente de soporte con IA local y CRM modular integrado con Shopify y WooCommerce. Santiago, Chile.">
+    <meta name="description" content="Portafolio de Vangelis Ramos Ríos, Ingeniero en Computación e Informática (UNAB). Software a medida, automatización con Python e IA local, con base en soporte e infraestructura TI. Proyectos: agente de soporte con IA local (Ollama, RAG con PostgreSQL y pgvector) y CRM modular en TypeScript integrado con Shopify y WooCommerce por webhooks. Santiago, Chile.">
     <meta name="author" content="Vangelis Ramos Ríos">
     <meta name="theme-color" content="#f3f0e8">
     <link rel="canonical" href="https://vangeum.github.io/Portafolio/">
@@ -155,12 +155,12 @@
                     <div class="index-cards">
                         <a class="index-card reveal" data-reveal href="#tesis">
                             <span class="index-num">01</span>
-                            <div><h3>Agente de soporte con IA local</h3><p>Tesis de título · IA en infraestructura propia</p></div>
+                            <div><h3>Agente de soporte con IA local</h3><p>Tesis · Ollama, RAG con pgvector y Docker</p></div>
                             <span class="index-thumb" aria-hidden="true"><svg viewBox="0 0 120 70"><rect class="t-dash" x="40" y="10" width="76" height="50" rx="6"/><rect class="t-line" x="6" y="27" width="24" height="16" rx="3"/><rect class="t-line" x="48" y="27" width="24" height="16" rx="3"/><rect class="t-line" x="84" y="27" width="24" height="16" rx="3"/><path class="t-dash" d="M30 35H48M72 35H84"/><circle class="t-dot" cx="39" cy="35" r="3.5"/></svg></span>
                         </a>
                         <a class="index-card reveal" data-reveal href="#crm">
                             <span class="index-num">02</span>
-                            <div><h3>CRM modular</h3><p>Proyecto personal · venta en tienda y en línea</p></div>
+                            <div><h3>CRM modular</h3><p>Proyecto personal · TypeScript, webhooks y Docker</p></div>
                             <span class="index-thumb" aria-hidden="true"><svg viewBox="0 0 120 70"><rect class="t-line" x="6" y="8" width="24" height="13" rx="3"/><rect class="t-line" x="6" y="29" width="24" height="13" rx="3"/><rect class="t-line" x="6" y="50" width="24" height="13" rx="3"/><rect class="t-line" x="46" y="24" width="28" height="22" rx="3"/><rect class="t-dash" x="86" y="8" width="28" height="55" rx="5"/><path class="t-dash" d="M30 14L46 30M30 35H46M30 56L46 40M74 35H86"/><circle class="t-dot" cx="80" cy="35" r="3.5"/></svg></span>
                         </a>
                         <a class="index-card reveal" data-reveal href="#capacidades">
@@ -193,7 +193,8 @@
                     </div>
                     <dl class="project-meta reveal" data-reveal>
                         <div><dt>Tipo</dt><dd>Tesis de título</dd></div>
-                        <div><dt>Foco</dt><dd>IA en infraestructura propia</dd></div>
+                        <div><dt>Stack</dt><dd>Ollama · PostgreSQL + pgvector · Docker</dd></div>
+                        <div><dt>Lenguajes</dt><dd>Python, PHP y JavaScript</dd></div>
                         <div><dt>Datos</dt><dd>No salen de la empresa</dd></div>
                     </dl>
                 </div>
@@ -207,7 +208,7 @@
                             <desc id="fig-h-desc">El cliente envía una consulta a la interfaz de chat. El agente la recibe, busca contexto en la base de conocimiento y genera la respuesta con un modelo de lenguaje local. Todo ocurre dentro de la infraestructura propia.</desc>
 
                             <rect class="boundary" x="210" y="36" width="760" height="336"/>
-                            <text class="t-accent" x="228" y="62" font-size="12" letter-spacing="1.5">INFRAESTRUCTURA PROPIA</text>
+                            <text class="t-accent" x="228" y="62" font-size="12" letter-spacing="1.5">INFRAESTRUCTURA PROPIA · DOCKER</text>
                             <text class="t-sm" x="952" y="356" font-size="11" text-anchor="end">los datos no salen de este perímetro</text>
 
                             <path id="w1" class="wire" d="M160 198 H250"/>
@@ -230,11 +231,11 @@
 
                             <rect class="node" x="700" y="90" width="230" height="60"/>
                             <text x="815" y="117" font-size="13" text-anchor="middle">modelo de lenguaje</text>
-                            <text class="t-sm" x="815" y="134" font-size="10" text-anchor="middle">ejecución local</text>
+                            <text class="t-sm" x="815" y="134" font-size="10" text-anchor="middle">servido con Ollama</text>
 
                             <rect class="node" x="700" y="250" width="230" height="60"/>
-                            <text x="815" y="277" font-size="13" text-anchor="middle">base de conocimiento</text>
-                            <text class="t-sm" x="815" y="294" font-size="10" text-anchor="middle">información de la empresa</text>
+                            <text x="815" y="277" font-size="13" text-anchor="middle">base de conocimiento (RAG)</text>
+                            <text class="t-sm" x="815" y="294" font-size="10" text-anchor="middle">PostgreSQL + pgvector</text>
 
                             <text class="t-sm" x="320" y="310" font-size="10">respuesta al cliente</text>
 
@@ -254,7 +255,7 @@
                             <title id="fig-v-title">Arquitectura del agente de soporte con IA local</title>
 
                             <rect class="boundary" x="16" y="104" width="328" height="480"/>
-                            <text class="t-accent" x="30" y="128" font-size="11" letter-spacing="1.2">INFRAESTRUCTURA PROPIA</text>
+                            <text class="t-accent" x="30" y="128" font-size="11" letter-spacing="1.2">INFRAESTRUCTURA PROPIA · DOCKER</text>
                             <text class="t-sm" x="180" y="530" font-size="10" text-anchor="middle">los datos no salen</text>
                             <text class="t-sm" x="180" y="546" font-size="10" text-anchor="middle">de este perímetro</text>
 
@@ -275,12 +276,12 @@
                             <text class="t-sm" x="180" y="298" font-size="10" text-anchor="middle">orquesta y decide</text>
 
                             <rect class="node" x="30" y="386" width="140" height="64"/>
-                            <text x="100" y="414" font-size="11" text-anchor="middle">modelo de</text>
-                            <text x="100" y="430" font-size="11" text-anchor="middle">lenguaje local</text>
+                            <text x="100" y="414" font-size="11" text-anchor="middle">modelo local</text>
+                            <text class="t-sm" x="100" y="430" font-size="10" text-anchor="middle">Ollama</text>
 
                             <rect class="node" x="190" y="386" width="140" height="64"/>
-                            <text x="260" y="414" font-size="11" text-anchor="middle">base de</text>
-                            <text x="260" y="430" font-size="11" text-anchor="middle">conocimiento</text>
+                            <text x="260" y="414" font-size="11" text-anchor="middle">conocimiento</text>
+                            <text class="t-sm" x="260" y="430" font-size="10" text-anchor="middle">pgvector</text>
 
                             <g aria-hidden="true">
                                 <circle class="packet" r="4.5"><animateMotion dur="5s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.001;0.12;1" calcMode="linear"><mpath href="#v1"/></animateMotion><animate attributeName="opacity" dur="5s" repeatCount="indefinite" values="1;1;0;0" keyTimes="0;0.12;0.121;1"/></circle>
@@ -309,22 +310,24 @@
                     <div class="col reveal" data-reveal>
                         <span class="label">02 — Solución</span>
                         <h3>Un agente que responde</h3>
-                        <p>Entiende la consulta, busca en la base de conocimiento de la empresa y responde en lenguaje natural.</p>
+                        <p>Busca contexto en la base de conocimiento de la empresa (RAG sobre PostgreSQL con pgvector) y responde en lenguaje natural con un modelo servido por Ollama.</p>
                     </div>
                     <div class="col reveal" data-reveal>
                         <span class="label">03 — Por qué local</span>
                         <h3>Datos bajo control</h3>
-                        <p>El modelo corre en infraestructura propia: privacidad de la información, costos predecibles y control del despliegue.</p>
+                        <p>El modelo corre en infraestructura propia y todo el servicio se levanta con Docker: privacidad de la información, costos predecibles y control del despliegue.</p>
                     </div>
                 </div>
 
                 <div class="chips reveal" data-reveal>
-                    <span class="label">Componentes</span>
-                    <span class="chip">modelo de lenguaje local</span>
-                    <span class="chip">base de conocimiento</span>
-                    <span class="chip">agente orquestador</span>
-                    <span class="chip">interfaz de chat</span>
-                    <span class="chip">servidor propio</span>
+                    <span class="label">Stack</span>
+                    <span class="chip">Ollama</span>
+                    <span class="chip">RAG</span>
+                    <span class="chip">PostgreSQL + pgvector</span>
+                    <span class="chip">Python</span>
+                    <span class="chip">PHP</span>
+                    <span class="chip">JavaScript</span>
+                    <span class="chip">Docker</span>
                 </div>
                 <div class="slide-foot mono"><span>Vangelis Ramos Ríos — Portafolio técnico</span><span>P. 03 / 08</span></div>
         </section>
@@ -348,7 +351,8 @@
                     </div>
                     <dl class="project-meta reveal" data-reveal>
                         <div><dt>Tipo</dt><dd>Proyecto personal</dd></div>
-                        <div><dt>Canales</dt><dd>Local, Shopify y WooCommerce</dd></div>
+                        <div><dt>Stack</dt><dd>TypeScript · Docker</dd></div>
+                        <div><dt>Integraciones</dt><dd>Shopify y WooCommerce por webhooks</dd></div>
                         <div><dt>Diseño</dt><dd>Por módulos, según el negocio</dd></div>
                     </dl>
                 </div>
@@ -379,15 +383,15 @@
 
                             <rect class="node" x="30" y="172" width="170" height="56"/>
                             <text x="115" y="198" font-size="13" text-anchor="middle">Shopify</text>
-                            <text class="t-sm" x="115" y="215" font-size="10" text-anchor="middle">tienda online</text>
+                            <text class="t-sm" x="115" y="215" font-size="10" text-anchor="middle">webhooks</text>
 
                             <rect class="node" x="30" y="274" width="170" height="56"/>
                             <text x="115" y="300" font-size="13" text-anchor="middle">WooCommerce</text>
-                            <text class="t-sm" x="115" y="317" font-size="10" text-anchor="middle">tienda online</text>
+                            <text class="t-sm" x="115" y="317" font-size="10" text-anchor="middle">webhooks</text>
 
                             <rect class="node node-key" x="330" y="150" width="190" height="100"/>
                             <text class="t-accent" x="425" y="196" font-size="15" text-anchor="middle">núcleo CRM</text>
-                            <text class="t-sm" x="425" y="216" font-size="10" text-anchor="middle">todo en un lugar</text>
+                            <text class="t-sm" x="425" y="216" font-size="10" text-anchor="middle">TypeScript · Docker</text>
 
                             <rect class="node" x="650" y="70" width="290" height="50"/>
                             <text x="795" y="99" font-size="13" text-anchor="middle">clientes</text>
@@ -433,7 +437,7 @@
 
                             <rect class="node node-key" x="80" y="150" width="200" height="64"/>
                             <text class="t-accent" x="180" y="178" font-size="13" text-anchor="middle">núcleo CRM</text>
-                            <text class="t-sm" x="180" y="196" font-size="10" text-anchor="middle">todo en un lugar</text>
+                            <text class="t-sm" x="180" y="196" font-size="10" text-anchor="middle">TypeScript · Docker</text>
 
                             <rect class="node" x="70" y="294" width="250" height="44"/>
                             <text x="195" y="320" font-size="12" text-anchor="middle">clientes</text>
@@ -474,17 +478,17 @@
                     <div class="col reveal" data-reveal>
                         <span class="label">03 — Desde casa</span>
                         <h3>Shopify o WooCommerce</h3>
-                        <p>Se integra con la tienda online para vender también por internet.</p>
+                        <p>Recibe los pedidos de la tienda online por webhooks, así vendes también por internet sin pasar datos a mano.</p>
                     </div>
                 </div>
 
                 <div class="chips reveal" data-reveal>
-                    <span class="label">Componentes</span>
-                    <span class="chip">núcleo CRM</span>
-                    <span class="chip">módulos activables</span>
-                    <span class="chip">punto de venta</span>
-                    <span class="chip">integración con Shopify</span>
-                    <span class="chip">integración con WooCommerce</span>
+                    <span class="label">Stack</span>
+                    <span class="chip">TypeScript</span>
+                    <span class="chip">Webhooks</span>
+                    <span class="chip">Shopify</span>
+                    <span class="chip">WooCommerce</span>
+                    <span class="chip">Docker</span>
                 </div>
                 <div class="slide-foot mono"><span>Vangelis Ramos Ríos — Portafolio técnico</span><span>P. 04 / 08</span></div>
         </section>
@@ -548,13 +552,13 @@
                     <li class="cap reveal" data-reveal>
                         <span class="cap-num">01</span>
                         <h3>Software para negocios</h3>
-                        <p>Sistemas a medida para gestionar clientes y ventas, en tienda y en línea con Shopify o WooCommerce.</p>
+                        <p>Sistemas a medida en TypeScript para gestionar clientes y ventas, integrados con Shopify o WooCommerce por webhooks y listos para Docker.</p>
                         <a class="pill" href="#crm">↳ CRM modular</a>
                     </li>
                     <li class="cap reveal" data-reveal>
                         <span class="cap-num">02</span>
                         <h3>IA en infraestructura propia</h3>
-                        <p>Agentes con modelos de lenguaje que corren en servidores propios, sin enviar datos a servicios externos.</p>
+                        <p>Agentes con modelos servidos por Ollama y RAG sobre PostgreSQL con pgvector, en servidores propios y sin enviar datos a servicios externos.</p>
                         <a class="pill" href="#tesis">↳ Agente de soporte con IA</a>
                     </li>
                     <li class="cap reveal" data-reveal>
@@ -576,20 +580,21 @@
                         <span class="label">Programación y datos</span>
                         <ul>
                             <li>Python</li>
-                            <li>SQL</li>
+                            <li>TypeScript y JavaScript</li>
+                            <li>PHP</li>
+                            <li>SQL, PostgreSQL y pgvector</li>
                             <li>Java, C y C++</li>
-                            <li>JavaScript, HTML y CSS</li>
-                            <li>IA generativa y machine learning</li>
+                            <li>IA generativa y RAG</li>
                         </ul>
                     </div>
                     <div class="skill-col reveal" data-reveal>
-                        <span class="label">Plataformas</span>
+                        <span class="label">Plataformas y herramientas</span>
                         <ul>
-                            <li>Shopify y WooCommerce</li>
+                            <li>Docker</li>
+                            <li>Ollama</li>
+                            <li>Shopify y WooCommerce (webhooks)</li>
                             <li>Git y GitHub</li>
-                            <li>Autodesk: AutoCAD, Revit y Civil 3D</li>
-                            <li>Adobe Creative Cloud</li>
-                            <li>Trimble</li>
+                            <li>Autodesk, Adobe y Trimble</li>
                         </ul>
                     </div>
                     <div class="skill-col reveal" data-reveal>

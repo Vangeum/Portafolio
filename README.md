@@ -9,10 +9,12 @@ Portafolio técnico de **Vangelis Ramos Ríos**, Ingeniero en Computación e Inf
 
 ## Qué incluye
 
-- Dos proyectos, cada uno con un diagrama animado de su arquitectura: el agente de soporte con IA local y el CRM modular
+- Dos proyectos, cada uno con un diagrama animado y ampliable de su arquitectura:
+  - **Agente de soporte con IA local** (tesis): Ollama, RAG con PostgreSQL + pgvector, Python, PHP y JavaScript, desplegable con Docker
+  - **CRM modular** (proyecto personal): TypeScript, integración con Shopify y WooCommerce por webhooks, desplegable con Docker
 - Experiencia en soporte TI, desde la práctica profesional hasta el cargo actual
 - Capacidades concretas con su respaldo y habilidades agrupadas por área
-- 11 certificaciones con enlace de verificación (IBM, Autodesk, Coursera y UAB)
+- 11 certificaciones con enlace de verificación (IBM, Autodesk, Coursera y UAB): 4 destacadas y 7 plegables
 - Diseño en diapositivas grafito y crema con acento naranja: tipografía Staatliches, Schibsted Grotesk e IBM Plex Mono, monograma en órbita y teclas "siguiente ↵" para avanzar
 - Versión imprimible que funciona como CV de 2 páginas
 

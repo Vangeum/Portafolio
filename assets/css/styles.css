@@ -1715,7 +1715,8 @@ button.key {
 
   .project-meta {
     display: flex;
-    gap: 4pt 16pt;
+    flex-wrap: wrap;
+    gap: 2pt 16pt;
     margin-top: 3pt;
     padding-top: 3pt;
     font-size: 8.5pt;
