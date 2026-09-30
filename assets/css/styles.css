@@ -471,6 +471,10 @@ a.pill:hover {
   border-top: 1px solid var(--line);
 }
 
+.slide-foot span:last-child {
+  white-space: nowrap;
+}
+
 .display {
   font-family: var(--display);
   font-weight: 400;
@@ -1161,7 +1165,83 @@ button.key {
   margin-top: 24px;
 }
 
+/* Capturas reales en un marco de navegador */
+.shots {
+  display: grid;
+  gap: clamp(18px, 2.4vw, 28px);
+  margin-top: clamp(24px, 3vw, 36px);
+}
+
+.shot {
+  margin: 0;
+}
+
+.shot-frame {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--card-line);
+  border-radius: 12px;
+  background: var(--card-bg);
+  color: var(--card-fg);
+  text-decoration: none;
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+
+.shot-frame:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.24);
+}
+
+.shot-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--card-line);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+}
+
+.shot-bar i {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+}
+
+.shot-bar i:first-child {
+  border-color: var(--card-accent);
+  background: var(--card-accent);
+}
+
+.shot-bar span {
+  overflow: hidden;
+  margin-left: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.shot figcaption {
+  margin-top: 10px;
+  font-size: 0.76rem;
+}
+
 @media (min-width: 820px) {
+  .shots {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .shots-single {
+    grid-template-columns: 1fr;
+  }
+
   .cols {
     grid-template-columns: repeat(3, 1fr);
     border-bottom: 1px solid var(--line);
@@ -1611,6 +1691,9 @@ button.key {
   .chips,
   #crm .figure,
   #crm .cols,
+  #panel .figure,
+  #panel .cols,
+  .shots,
   .screen-only,
   .cap .pill,
   .cert .pill,

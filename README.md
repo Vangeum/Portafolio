@@ -1,6 +1,6 @@
 # Portafolio · Vangelis Ramos Ríos
 
-Portafolio técnico de **Vangelis Ramos Ríos**, Ingeniero en Computación e Informática (Universidad Andrés Bello), de Santiago, Chile. Trabajo como Analista de Servicios y Experiencia Digital en Grupo COMGRAP, automatizo con Python y construyo software: un agente de soporte con IA local (mi tesis) y un CRM modular para vender en tienda y en línea con Shopify o WooCommerce.
+Portafolio técnico de **Vangelis Ramos Ríos**, Ingeniero en Computación e Informática (Universidad Andrés Bello), de Santiago, Chile. Trabajo como Analista de Servicios y Experiencia Digital en Grupo COMGRAP, automatizo con Python y construyo software: un chatbot de soporte con IA local (mi tesis), un CRM modular en producción y el homelab donde administro servidores de juegos.
 
 **Ver en vivo:** https://vangeum.github.io/Portafolio/
 **CV en PDF:** [cv/Vangelis-Ramos-CV.pdf](cv/Vangelis-Ramos-CV.pdf)
@@ -9,9 +9,11 @@ Portafolio técnico de **Vangelis Ramos Ríos**, Ingeniero en Computación e Inf
 
 ## Qué incluye
 
-- Dos proyectos, cada uno con un diagrama animado y ampliable de su arquitectura:
-  - **Agente de soporte con IA local** (tesis): Ollama, RAG con PostgreSQL + pgvector, Python, PHP y JavaScript, desplegable con Docker
-  - **CRM modular** (proyecto personal): TypeScript, integración con Shopify y WooCommerce por webhooks, desplegable con Docker
+- Tres proyectos, cada uno con un diagrama animado y ampliable de su arquitectura:
+  - **Agente de soporte con IA local** (tesis): RAG orquestado con n8n, modelos abiertos con Ollama, PostgreSQL + pgvector, Caddy y Docker
+  - **CRM modular** (en producción en [crm.sktserver.com](https://crm.sktserver.com)): Express + TypeScript, React 19 + Vite como PWA, SQLite, integración con Shopify y WooCommerce por webhooks firmados, desplegado con Docker
+  - **SKT Panel** (homelab propio): servidores de juego en contenedores Docker sobre 2 mini PC, túnel frp hacia un VPS y panel web protegido con Cloudflare Access
+- Capturas reales del CRM y del panel
 - Experiencia en soporte TI, desde la práctica profesional hasta el cargo actual
 - Capacidades concretas con su respaldo y habilidades agrupadas por área
 - 11 certificaciones con enlace de verificación (IBM, Autodesk, Coursera y UAB): 4 destacadas y 7 plegables
@@ -32,7 +34,7 @@ Sitio estático sin frameworks ni paso de compilación:
 index.html
 assets/css/styles.css
 assets/js/main.js
-assets/img/          favicon e imagen para redes sociales
+assets/img/          favicon, imagen para redes sociales y capturas de los proyectos
 cv/                  CV en PDF generado desde la versión imprimible
 ```
 

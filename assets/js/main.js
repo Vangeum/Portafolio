@@ -64,7 +64,7 @@
 
   var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
   var sectionOf = {
-    proyectos: 'proyectos', tesis: 'proyectos', crm: 'proyectos',
+    proyectos: 'proyectos', tesis: 'proyectos', crm: 'proyectos', panel: 'proyectos',
     experiencia: 'experiencia', capacidades: 'capacidades', formacion: 'formacion', contacto: 'contacto'
   };
 
