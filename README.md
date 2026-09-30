@@ -13,7 +13,7 @@ Portafolio técnico de **Vangelis Ramos Ríos**, Ingeniero en Computación e Inf
 - Experiencia en soporte TI, desde la práctica profesional hasta el cargo actual
 - Capacidades concretas con su respaldo y habilidades agrupadas por área
 - 11 certificaciones con enlace de verificación (IBM, Autodesk, Coursera y UAB)
-- Dos modos visuales: **papel** (manual técnico) y **plano** (blueprint), con la preferencia guardada en el navegador
+- Diseño en diapositivas grafito y crema con acento naranja: tipografía Staatliches, Schibsted Grotesk e IBM Plex Mono, monograma en órbita y teclas "siguiente ↵" para avanzar
 - Versión imprimible que funciona como CV de 2 páginas
 
 ## Tecnología
@@ -21,9 +21,9 @@ Portafolio técnico de **Vangelis Ramos Ríos**, Ingeniero en Computación e Inf
 Sitio estático sin frameworks ni paso de compilación:
 
 - **HTML** semántico con metadatos para SEO, Open Graph y schema.org
-- **CSS** propio con variables para los dos modos, diseño responsive desde 360 px y estilos de impresión
+- **CSS** propio con la paleta en cuatro variables, diseño responsive desde 360 px y estilos de impresión
 - **SVG** animado para los diagramas de los proyectos, con versión horizontal y vertical
-- **JavaScript** liviano sin dependencias: menú móvil, cambio de modo, revelado al hacer scroll y línea de capacidades que avanza con el scroll. Todas las animaciones respetan `prefers-reduced-motion`
+- **JavaScript** liviano sin dependencias: menú móvil, sección activa en la navegación y revelado al hacer scroll. Todas las animaciones respetan `prefers-reduced-motion`
 - Publicado con **GitHub Pages**
 
 ```

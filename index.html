@@ -41,30 +41,19 @@
     }
     </script>
 
-    <!-- Modo guardado antes de pintar, para evitar parpadeo -->
-    <script>
-        (function () {
-            var root = document.documentElement;
-            root.classList.add('js');
-            try {
-                if (localStorage.getItem('modo') === 'plano') root.setAttribute('data-theme', 'plano');
-            } catch (e) {}
-        })();
-    </script>
+    <script>document.documentElement.classList.add('js');</script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600;700&family=Staatliches&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
 
     <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
         <defs>
-            <symbol id="i-ne" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M7 17 17 7M8 7h9v9"/></symbol>
-            <symbol id="i-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M12 4v15M6 13l6 6 6-6"/></symbol>
-            <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 8h16M4 16h16"/></symbol>
-            <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+            <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></symbol>
+            <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></symbol>
         </defs>
     </svg>
 
@@ -72,9 +61,9 @@
 
     <!-- NAVEGACIÓN -->
     <header class="nav" id="nav">
-        <div class="container nav-inner">
+        <div class="wrap nav-inner">
             <a href="#inicio" class="brand" aria-label="Vangelis Ramos, ir al inicio">
-                <span class="brand-mark" aria-hidden="true">VR/</span>
+                <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 100 100"><circle class="ring" cx="50" cy="50" r="46"/></svg>VR</span>
                 <span>Vangelis Ramos</span>
             </a>
 
@@ -87,11 +76,7 @@
             </nav>
 
             <div class="nav-actions">
-                <div class="mode" role="group" aria-label="Estilo visual">
-                    <button type="button" data-mode="papel" aria-pressed="true">Papel</button>
-                    <button type="button" data-mode="plano" aria-pressed="false">Plano</button>
-                </div>
-                <a class="btn btn-ghost nav-cv" href="cv/Vangelis-Ramos-CV.pdf" download style="min-height:36px;padding:7px 14px">CV <svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
+                <a class="key nav-cv" href="cv/Vangelis-Ramos-CV.pdf" download>CV ↓</a>
                 <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
                     <svg class="icon icon-menu" aria-hidden="true"><use href="#i-menu"/></svg>
                     <svg class="icon icon-close" aria-hidden="true"><use href="#i-close"/></svg>
@@ -108,61 +93,101 @@
             <a href="#formacion"><span>04</span>Formación</a>
             <a href="#contacto"><span>05</span>Contacto</a>
         </nav>
-        <a class="btn btn-solid" href="cv/Vangelis-Ramos-CV.pdf" download>Descargar CV <svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
+        <a class="key key-lg" href="cv/Vangelis-Ramos-CV.pdf" download>Descargar CV ↓</a>
     </div>
 
-    <main id="contenido">
+    <main id="contenido" class="wrap deck">
 
-        <!-- HERO: hoja de datos técnicos -->
-        <section class="hero" id="inicio" aria-labelledby="hero-title" data-hero>
-            <div class="container">
-                <div class="spec-bar mono">
-                    <span><span class="led" aria-hidden="true"></span>Hoja de datos técnicos</span>
-                    <span>Rev. 2026.09<span class="spec-bar-extra"> — Santiago, Chile</span></span>
+        <!-- P. 01 · PORTADA -->
+        <section class="slide s-main cover" id="inicio" aria-labelledby="hero-title" data-hero>
+                <div class="slide-top">
+                    <span class="who"><strong>Vangelis Ramos</strong> · Ingeniero en Computación e Informática</span>
+                    <span class="where mono">rev. 2026.09</span>
+                    <a class="key" href="#proyectos" aria-label="Ir a la siguiente sección: Proyectos">siguiente ↵</a>
                 </div>
 
-                <h1 class="hero-name" id="hero-title">
-                    <span class="line"><span>Vangelis</span></span>
-                    <span class="line"><span>Ramos Ríos<span class="dot">.</span></span></span>
-                </h1>
-                <p class="print-only print-contact mono">contactovange02@gmail.com · linkedin.com/in/vangelis-ramos · github.com/Vangeum · vangeum.github.io/Portafolio · Santiago, Chile</p>
+                <div class="cover-body">
+                    <div>
+                        <h1 class="display cover-name" id="hero-title">
+                            <span class="line"><span>Vangelis</span></span>
+                            <span class="line"><span>Ramos Ríos<span class="dot">.</span></span></span>
+                        </h1>
+                        <p class="print-only print-contact mono">contactovange02@gmail.com · linkedin.com/in/vangelis-ramos · github.com/Vangeum · vangeum.github.io/Portafolio · Santiago, Chile</p>
+                    </div>
+                    <div class="cover-side">
+                        <div class="monogram" aria-hidden="true">
+                            <svg viewBox="0 0 100 100"><circle class="ring" cx="50" cy="50" r="46"/><g class="orbit"><circle cx="50" cy="4" r="4.2"/></g></svg>
+                            <span>VR</span>
+                        </div>
+                        <p class="tagline">Ingeniero en Computación<br>e Informática · Soporte TI,<br>IA local y software a medida</p>
+                    </div>
+                </div>
 
-                <dl class="spec" aria-label="Ficha técnica">
-                    <div class="spec-row" style="--i:0"><dt class="label">Modelo</dt><dd>Ingeniero en Computación e Informática — UNAB</dd></div>
-                    <div class="spec-row" style="--i:1"><dt class="label">Función</dt><dd>Soporte TI, automatización y software a medida</dd></div>
-                    <div class="spec-row" style="--i:2"><dt class="label">Salidas</dt><dd><a href="#tesis">Agente de soporte con IA local</a> · <a href="#crm">CRM modular</a></dd></div>
-                    <div class="spec-row" style="--i:3"><dt class="label">Compatible</dt><dd>Python · SQL · Shopify · WooCommerce · Autodesk · Adobe · Trimble</dd></div>
-                    <div class="spec-row" style="--i:4"><dt class="label">En servicio</dt><dd>Analista de Servicios y Experiencia Digital — Grupo COMGRAP</dd></div>
-                    <div class="spec-row" style="--i:5"><dt class="label">Estado</dt><dd>Operativo — Santiago, Chile<span class="cursor" aria-hidden="true"></span></dd></div>
+                <dl class="cover-info">
+                    <div><dt>Email</dt><dd><a href="mailto:contactovange02@gmail.com">contactovange02@gmail.com</a></dd></div>
+                    <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/vangelis-ramos/" target="_blank" rel="noopener">/in/vangelis-ramos</a></dd></div>
+                    <div><dt>GitHub</dt><dd><a href="https://github.com/Vangeum" target="_blank" rel="noopener">github.com/Vangeum</a></dd></div>
                 </dl>
-
-                <div class="hero-cta fade">
-                    <a class="btn btn-solid" href="#proyectos">Ver proyectos <svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
-                    <a class="btn btn-ghost" href="cv/Vangelis-Ramos-CV.pdf" download>Descargar CV</a>
-                </div>
-            </div>
         </section>
 
-        <!-- 01 · PROYECTOS -->
-        <section class="section section-alt" id="proyectos" aria-labelledby="proyectos-title">
-            <div class="container">
-                <header class="section-head" data-reveal>
-                    <div class="section-bar mono"><span><span class="section-num">§ 01</span> — Proyectos</span><span>2 sistemas completos</span></div>
-                    <h2 class="section-title" id="proyectos-title">Lo que construyo</h2>
-                    <p class="section-lead">Dos sistemas completos: uno atiende clientes con IA sin depender de la nube y el otro administra un negocio que vende en tienda y en línea.</p>
-                </header>
+        <!-- P. 02 · ÍNDICE DE PROYECTOS -->
+        <section class="slide s-cream slide-index" id="proyectos" aria-labelledby="proyectos-title">
+                <div class="slide-top">
+                    <span class="who"><strong>Vangelis Ramos</strong> · Portafolio</span>
+                    <span class="where mono"><span class="sec">§ 01</span> · Proyectos</span>
+                    <a class="key" href="#tesis" aria-label="Ir al proyecto 01: Agente de soporte con IA local">siguiente ↵</a>
+                </div>
 
-                <!-- Proyecto 01 · Agente de soporte con IA local -->
-                <article class="project" id="tesis" aria-labelledby="tesis-title">
-                <header class="project-head" data-reveal>
-                    <div class="project-bar mono"><span><span class="accent">01</span> — Tesis de título</span><span>IA en infraestructura propia</span></div>
-                    <h3 class="project-title" id="tesis-title">Agente de soporte con IA local</h3>
-                    <p class="section-lead keep-print">Un agente de atención al cliente que responde consultas con un modelo de lenguaje ejecutado en infraestructura propia. Las conversaciones y los datos de la empresa no salen de sus servidores.</p>
-                </header>
+                <div class="index-grid">
+                    <div data-reveal>
+                        <h2 class="display display-sm" id="proyectos-title"><span class="line"><span>Proyectos<span class="dot">.</span></span></span></h2>
+                        <p class="lead">Dos sistemas completos: uno atiende clientes con IA sin depender de la nube y el otro administra un negocio que vende en tienda y en línea.</p>
+                    </div>
 
-                <figure class="blueprint fade" data-reveal>
-                    <div class="blueprint-bar"><span><strong>Fig. 01</strong> — Arquitectura del agente</span><span>Vista lógica</span></div>
+                    <div class="index-cards">
+                        <a class="index-card reveal" data-reveal href="#tesis">
+                            <span class="index-num">01</span>
+                            <div><h3>Agente de soporte con IA local</h3><p>Tesis de título · IA en infraestructura propia</p></div>
+                            <span class="index-thumb" aria-hidden="true"><svg viewBox="0 0 120 70"><rect class="t-dash" x="40" y="10" width="76" height="50" rx="6"/><rect class="t-line" x="6" y="27" width="24" height="16" rx="3"/><rect class="t-line" x="48" y="27" width="24" height="16" rx="3"/><rect class="t-line" x="84" y="27" width="24" height="16" rx="3"/><path class="t-dash" d="M30 35H48M72 35H84"/><circle class="t-dot" cx="39" cy="35" r="3.5"/></svg></span>
+                        </a>
+                        <a class="index-card reveal" data-reveal href="#crm">
+                            <span class="index-num">02</span>
+                            <div><h3>CRM modular</h3><p>Proyecto personal · venta en tienda y en línea</p></div>
+                            <span class="index-thumb" aria-hidden="true"><svg viewBox="0 0 120 70"><rect class="t-line" x="6" y="8" width="24" height="13" rx="3"/><rect class="t-line" x="6" y="29" width="24" height="13" rx="3"/><rect class="t-line" x="6" y="50" width="24" height="13" rx="3"/><rect class="t-line" x="46" y="24" width="28" height="22" rx="3"/><rect class="t-dash" x="86" y="8" width="28" height="55" rx="5"/><path class="t-dash" d="M30 14L46 30M30 35H46M30 56L46 40M74 35H86"/><circle class="t-dot" cx="80" cy="35" r="3.5"/></svg></span>
+                        </a>
+                        <a class="index-card reveal" data-reveal href="#capacidades">
+                            <span class="index-num">03</span>
+                            <div><h3>Qué puedo hacer</h3><p>Cuatro capacidades con su respaldo</p></div>
+                            <span class="index-thumb" aria-hidden="true"><svg viewBox="0 0 120 70"><rect class="t-line" x="22" y="8" width="34" height="24" rx="3"/><rect class="t-line" x="64" y="8" width="34" height="24" rx="3"/><rect class="t-line" x="22" y="38" width="34" height="24" rx="3"/><rect class="t-line" x="64" y="38" width="34" height="24" rx="3"/><circle class="t-dot" cx="81" cy="50" r="3.5"/></svg></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="slide-foot mono"><span>Vangelis Ramos Ríos — Portafolio técnico</span><span>P. 02 / 08</span></div>
+        </section>
 
+        <!-- P. 03 · PROYECTO 01 -->
+        <section class="slide s-main" id="tesis" aria-labelledby="tesis-title">
+                <div class="slide-top">
+                    <span class="who"><strong>Vangelis Ramos</strong> · Portafolio</span>
+                    <span class="where mono"><span class="sec">§ 01.1</span> · Agente IA</span>
+                    <a class="key" href="#crm" aria-label="Ir al proyecto 02: CRM modular">siguiente ↵</a>
+                </div>
+
+                <div class="project-head">
+                    <div data-reveal>
+                        <p class="kicker mono">Proyecto 01 — Tesis de título</p>
+                        <h2 class="display project-title" id="tesis-title"><span class="line"><span>Agente de soporte</span></span><span class="line"><span>con IA local<span class="dot">.</span></span></span></h2>
+                        <p class="lead keep-print">Un agente de atención al cliente que responde consultas con un modelo de lenguaje ejecutado en infraestructura propia. Las conversaciones y los datos de la empresa no salen de sus servidores.</p>
+                    </div>
+                    <dl class="project-meta reveal" data-reveal>
+                        <div><dt>Tipo</dt><dd>Tesis de título</dd></div>
+                        <div><dt>Foco</dt><dd>IA en infraestructura propia</dd></div>
+                        <div><dt>Datos</dt><dd>No salen de la empresa</dd></div>
+                    </dl>
+                </div>
+
+                <figure class="figure reveal" data-reveal>
+                    <div class="figure-bar"><span><strong>Fig. 01</strong> — Arquitectura del agente</span><span>Vista lógica</span></div>
                     <div class="diagram">
                         <!-- Horizontal (escritorio) -->
                         <svg class="diagram-h" viewBox="0 0 1000 400" role="img" aria-labelledby="fig-h-title fig-h-desc">
@@ -256,53 +281,65 @@
                             </g>
                         </svg>
                     </div>
-
-                    <figcaption class="blueprint-legend">
+                    <figcaption class="figure-legend">
                         <span class="legend-item"><i aria-hidden="true"></i>consulta</span>
                         <span class="legend-item"><i class="back" aria-hidden="true"></i>respuesta</span>
                         <span class="legend-item"><i class="line" aria-hidden="true"></i>perímetro local</span>
                     </figcaption>
                 </figure>
 
-                <div class="thesis-cols">
-                    <div class="thesis-col fade" data-reveal>
+                <div class="cols">
+                    <div class="col reveal" data-reveal>
                         <span class="label">01 — Problema</span>
                         <h3>Consultas que se repiten</h3>
                         <p>Las preguntas frecuentes de los clientes ocupan al equipo de soporte y alargan los tiempos de respuesta.</p>
                     </div>
-                    <div class="thesis-col fade" data-reveal>
+                    <div class="col reveal" data-reveal>
                         <span class="label">02 — Solución</span>
                         <h3>Un agente que responde</h3>
                         <p>Entiende la consulta, busca en la base de conocimiento de la empresa y responde en lenguaje natural.</p>
                     </div>
-                    <div class="thesis-col fade" data-reveal>
+                    <div class="col reveal" data-reveal>
                         <span class="label">03 — Por qué local</span>
                         <h3>Datos bajo control</h3>
                         <p>El modelo corre en infraestructura propia: privacidad de la información, costos predecibles y control del despliegue.</p>
                     </div>
                 </div>
 
-                <div class="components fade" data-reveal>
-                    <span class="label" style="margin-right:8px">Componentes</span>
+                <div class="chips reveal" data-reveal>
+                    <span class="label">Componentes</span>
                     <span class="chip">modelo de lenguaje local</span>
                     <span class="chip">base de conocimiento</span>
                     <span class="chip">agente orquestador</span>
                     <span class="chip">interfaz de chat</span>
                     <span class="chip">servidor propio</span>
                 </div>
-                </article>
+                <div class="slide-foot mono"><span>Vangelis Ramos Ríos — Portafolio técnico</span><span>P. 03 / 08</span></div>
+        </section>
 
-                <!-- Proyecto 02 · CRM modular -->
-                <article class="project" id="crm" aria-labelledby="crm-title">
-                <header class="project-head" data-reveal>
-                    <div class="project-bar mono"><span><span class="accent">02</span> — Proyecto personal</span><span>Software para negocios</span></div>
-                    <h3 class="project-title" id="crm-title">CRM modular</h3>
-                    <p class="section-lead keep-print">Un sistema de gestión que se arma por módulos: cada negocio activa solo lo que necesita. Sirve para vender en el momento, en el local, o desde casa, conectado a una tienda en Shopify o WooCommerce.</p>
-                </header>
+        <!-- P. 04 · PROYECTO 02 -->
+        <section class="slide s-cream" id="crm" aria-labelledby="crm-title">
+                <div class="slide-top">
+                    <span class="who"><strong>Vangelis Ramos</strong> · Portafolio</span>
+                    <span class="where mono"><span class="sec">§ 01.2</span> · CRM modular</span>
+                    <a class="key" href="#experiencia" aria-label="Ir a la siguiente sección: Experiencia">siguiente ↵</a>
+                </div>
 
-                <figure class="blueprint blueprint-crm fade" data-reveal>
-                    <div class="blueprint-bar"><span><strong>Fig. 02</strong> — Arquitectura del CRM</span><span>Vista lógica</span></div>
+                <div class="project-head">
+                    <div data-reveal>
+                        <p class="kicker mono">Proyecto 02 — Proyecto personal</p>
+                        <h2 class="display project-title" id="crm-title"><span class="line"><span>CRM</span></span><span class="line"><span>modular<span class="dot">.</span></span></span></h2>
+                        <p class="lead keep-print">Un sistema de gestión que se arma por módulos: cada negocio activa solo lo que necesita. Sirve para vender en el momento, en el local, o desde casa, conectado a una tienda en Shopify o WooCommerce.</p>
+                    </div>
+                    <dl class="project-meta reveal" data-reveal>
+                        <div><dt>Tipo</dt><dd>Proyecto personal</dd></div>
+                        <div><dt>Canales</dt><dd>Local, Shopify y WooCommerce</dd></div>
+                        <div><dt>Diseño</dt><dd>Por módulos, según el negocio</dd></div>
+                    </dl>
+                </div>
 
+                <figure class="figure reveal" data-reveal>
+                    <div class="figure-bar"><span><strong>Fig. 02</strong> — Arquitectura del CRM</span><span>Vista lógica</span></div>
                     <div class="diagram">
                         <!-- Horizontal (escritorio) -->
                         <svg class="diagram-h" viewBox="0 0 1000 400" role="img" aria-labelledby="crm-h-title crm-h-desc">
@@ -402,128 +439,125 @@
                             </g>
                         </svg>
                     </div>
-
-                    <figcaption class="blueprint-legend">
+                    <figcaption class="figure-legend">
                         <span class="legend-item"><i aria-hidden="true"></i>venta o pedido</span>
                         <span class="legend-item"><i class="line" aria-hidden="true"></i>módulos activables</span>
                     </figcaption>
                 </figure>
 
-                <div class="thesis-cols">
-                    <div class="thesis-col fade" data-reveal>
+                <div class="cols">
+                    <div class="col reveal" data-reveal>
                         <span class="label">01 — Modular</span>
                         <h3>Se adapta a cada negocio</h3>
                         <p>Activas solo los módulos que usas y sumas otros cuando el negocio crece.</p>
                     </div>
-                    <div class="thesis-col fade" data-reveal>
+                    <div class="col reveal" data-reveal>
                         <span class="label">02 — En el local</span>
                         <h3>Venta en el momento</h3>
                         <p>Registra las ventas en el mostrador, al instante.</p>
                     </div>
-                    <div class="thesis-col fade" data-reveal>
+                    <div class="col reveal" data-reveal>
                         <span class="label">03 — Desde casa</span>
                         <h3>Shopify o WooCommerce</h3>
                         <p>Se integra con la tienda online para vender también por internet.</p>
                     </div>
                 </div>
 
-                <div class="components fade" data-reveal>
-                    <span class="label" style="margin-right:8px">Componentes</span>
+                <div class="chips reveal" data-reveal>
+                    <span class="label">Componentes</span>
                     <span class="chip">núcleo CRM</span>
                     <span class="chip">módulos activables</span>
                     <span class="chip">punto de venta</span>
                     <span class="chip">integración con Shopify</span>
                     <span class="chip">integración con WooCommerce</span>
                 </div>
-                </article>
-            </div>
+                <div class="slide-foot mono"><span>Vangelis Ramos Ríos — Portafolio técnico</span><span>P. 04 / 08</span></div>
         </section>
 
-        <!-- 02 · EXPERIENCIA -->
-        <section class="section" id="experiencia" aria-labelledby="experiencia-title">
-            <div class="container">
-                <header class="section-head" data-reveal>
-                    <div class="section-bar mono"><span><span class="section-num">§ 02</span> — Experiencia</span><span>2023 — hoy</span></div>
-                    <h2 class="section-title" id="experiencia-title">Donde aprendí cómo fallan los sistemas</h2>
-                    <p class="section-lead">Tres cargos en Grupo COMGRAP en menos de un año, de practicante a analista. Resuelvo incidencias reales todos los días, y eso define cómo diseño y automatizo.</p>
-                </header>
+        <!-- P. 05 · EXPERIENCIA -->
+        <section class="slide s-main" id="experiencia" aria-labelledby="experiencia-title">
+                <div class="slide-top">
+                    <span class="who"><strong>Vangelis Ramos</strong> · Portafolio</span>
+                    <span class="where mono"><span class="sec">§ 02</span> · Experiencia</span>
+                    <a class="key" href="#capacidades" aria-label="Ir a la siguiente sección: Capacidades">siguiente ↵</a>
+                </div>
 
-                <ol class="xp">
-                    <li class="xp-row fade" data-reveal>
-                        <span class="xp-when mono">jul 2026 — hoy</span>
-                        <div>
-                            <p class="xp-role">Analista de Servicios y Experiencia Digital<span class="tag">Ascenso</span></p>
-                            <p class="xp-org">Grupo COMGRAP · Híbrido</p>
-                        </div>
+                <div data-reveal style="margin-top:clamp(28px,4vw,48px)">
+                    <h2 class="display" id="experiencia-title"><span class="line"><span>Experiencia<span class="dot">.</span></span></span></h2>
+                    <p class="lead">Tres cargos en Grupo COMGRAP en menos de un año, de practicante a analista. Resuelvo incidencias reales todos los días, y eso define cómo diseño y automatizo.</p>
+                </div>
+
+                <ol class="xp-grid">
+                    <li class="xp-card reveal" data-reveal>
+                        <div class="xp-top"><span class="xp-when">jul 2026 — hoy</span><span class="pill">Ascenso</span></div>
+                        <p class="xp-role">Analista de Servicios y Experiencia Digital</p>
+                        <p class="xp-org">Grupo COMGRAP · Híbrido</p>
                         <p class="xp-desc">Gestión de incidencias y soporte a usuarios, sumando conocimientos de infraestructura y procesamiento de datos para mejorar los servicios digitales.</p>
                     </li>
-                    <li class="xp-row fade" data-reveal>
-                        <span class="xp-when mono">abr — jul 2026</span>
-                        <div>
-                            <p class="xp-role">Asistente Técnico, Soporte TI</p>
-                            <p class="xp-org">Grupo COMGRAP · Presencial</p>
-                        </div>
+                    <li class="xp-card reveal" data-reveal>
+                        <div class="xp-top"><span class="xp-when">abr — jul 2026</span><span class="pill">Contratado tras la práctica</span></div>
+                        <p class="xp-role">Asistente Técnico, Soporte TI</p>
+                        <p class="xp-org">Grupo COMGRAP · Presencial</p>
                         <p class="xp-desc">Soporte N1 y N2 de Autodesk, Adobe y Trimble. Gestión de licencias corporativas y una herramienta en Python para filtrarlas.</p>
                     </li>
-                    <li class="xp-row fade" data-reveal>
-                        <span class="xp-when mono">ene — abr 2026</span>
-                        <div>
-                            <p class="xp-role">Practicante Profesional, Soporte TI</p>
-                            <p class="xp-org">Grupo COMGRAP · Presencial</p>
-                        </div>
+                    <li class="xp-card reveal" data-reveal>
+                        <div class="xp-top"><span class="xp-when">ene — abr 2026</span></div>
+                        <p class="xp-role">Practicante Profesional, Soporte TI</p>
+                        <p class="xp-org">Grupo COMGRAP · Presencial</p>
                         <p class="xp-desc">Incidencias de hardware y software, y mantenimiento de equipos. La práctica terminó en contratación a jornada completa.</p>
                     </li>
-                    <li class="xp-row fade" data-reveal>
-                        <span class="xp-when mono">nov 2023 — ene 2024</span>
-                        <div>
-                            <p class="xp-role">Soporte TI</p>
-                            <p class="xp-org">Family Shop · Jornada parcial</p>
-                        </div>
+                    <li class="xp-card reveal" data-reveal>
+                        <div class="xp-top"><span class="xp-when">nov 2023 — ene 2024</span></div>
+                        <p class="xp-role">Soporte TI</p>
+                        <p class="xp-org">Family Shop · Jornada parcial</p>
                         <p class="xp-desc">Equipos, puntos de venta y redes LAN/WiFi. Apoyo en la preparación tecnológica para abrir tres tiendas nuevas.</p>
                     </li>
                 </ol>
-            </div>
+                <div class="slide-foot mono"><span>Vangelis Ramos Ríos — Portafolio técnico</span><span>P. 05 / 08</span></div>
         </section>
 
-        <!-- 03 · CAPACIDADES -->
-        <section class="section section-alt" id="capacidades" aria-labelledby="capacidades-title">
-            <div class="container">
-                <header class="section-head" data-reveal>
-                    <div class="section-bar mono"><span><span class="section-num">§ 03</span> — Capacidades</span><span>Lo que ofrezco hoy</span></div>
-                    <h2 class="section-title" id="capacidades-title">Qué puedo hacer</h2>
-                    <p class="section-lead">Cuatro áreas en las que aporto desde el primer día, cada una respaldada por experiencia o por un proyecto.</p>
-                </header>
+        <!-- P. 06 · CAPACIDADES -->
+        <section class="slide s-cream" id="capacidades" aria-labelledby="capacidades-title">
+                <div class="slide-top">
+                    <span class="who"><strong>Vangelis Ramos</strong> · Portafolio</span>
+                    <span class="where mono"><span class="sec">§ 03</span> · Capacidades</span>
+                    <a class="key" href="#formacion" aria-label="Ir a la siguiente sección: Formación">siguiente ↵</a>
+                </div>
 
-                <ol class="route" data-route>
-                    <li class="route-track" aria-hidden="true"></li>
-                    <li class="stop">
-                        <span class="label">01</span>
+                <div data-reveal style="margin-top:clamp(28px,4vw,48px)">
+                    <h2 class="display" id="capacidades-title"><span class="line"><span>Qué puedo</span></span><span class="line"><span>hacer<span class="dot">.</span></span></span></h2>
+                    <p class="lead">Cuatro áreas en las que aporto desde el primer día, cada una respaldada por experiencia o por un proyecto.</p>
+                </div>
+
+                <ol class="caps">
+                    <li class="cap reveal" data-reveal>
+                        <span class="cap-num">01</span>
                         <h3>Soporte e infraestructura TI</h3>
                         <p>Diagnostico y resuelvo incidencias de hardware, software y redes, y gestiono licencias de software corporativo.</p>
-                        <a class="stop-proof mono" href="#experiencia">↳ Grupo COMGRAP · Family Shop</a>
+                        <a class="pill" href="#experiencia">↳ COMGRAP · Family Shop</a>
                     </li>
-                    <li class="stop">
-                        <span class="label">02</span>
+                    <li class="cap reveal" data-reveal>
+                        <span class="cap-num">02</span>
                         <h3>Automatización con Python</h3>
                         <p>Herramientas que eliminan trabajo manual y ordenan la información.</p>
-                        <a class="stop-proof mono" href="#experiencia">↳ Filtro de licencias corporativas</a>
+                        <a class="pill" href="#experiencia">↳ Filtro de licencias</a>
                     </li>
-                    <li class="stop">
-                        <span class="label">03</span>
+                    <li class="cap reveal" data-reveal>
+                        <span class="cap-num">03</span>
                         <h3>IA en infraestructura propia</h3>
                         <p>Agentes con modelos de lenguaje que corren en servidores propios, sin enviar datos a servicios externos.</p>
-                        <a class="stop-proof mono" href="#tesis">↳ Agente de soporte con IA local</a>
+                        <a class="pill" href="#tesis">↳ Agente de soporte con IA</a>
                     </li>
-                    <li class="stop">
-                        <span class="label">04</span>
+                    <li class="cap reveal" data-reveal>
+                        <span class="cap-num">04</span>
                         <h3>Software para negocios</h3>
                         <p>Sistemas a medida para gestionar clientes y ventas, en tienda y en línea con Shopify o WooCommerce.</p>
-                        <a class="stop-proof mono" href="#crm">↳ CRM modular</a>
+                        <a class="pill" href="#crm">↳ CRM modular</a>
                     </li>
                 </ol>
 
                 <div class="skills">
-                    <div class="skill-col fade" data-reveal>
+                    <div class="skill-col reveal" data-reveal>
                         <span class="label">Uso a diario</span>
                         <ul>
                             <li>Soporte N1 y N2</li>
@@ -533,7 +567,7 @@
                             <li>Documentación técnica</li>
                         </ul>
                     </div>
-                    <div class="skill-col fade" data-reveal>
+                    <div class="skill-col reveal" data-reveal>
                         <span class="label">Programación y datos</span>
                         <ul>
                             <li>Python</li>
@@ -543,7 +577,7 @@
                             <li>IA generativa y machine learning</li>
                         </ul>
                     </div>
-                    <div class="skill-col fade" data-reveal>
+                    <div class="skill-col reveal" data-reveal>
                         <span class="label">Plataformas</span>
                         <ul>
                             <li>Shopify y WooCommerce</li>
@@ -554,74 +588,77 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+                <div class="slide-foot mono"><span>Vangelis Ramos Ríos — Portafolio técnico</span><span>P. 06 / 08</span></div>
         </section>
 
-        <!-- 04 · FORMACIÓN -->
-        <section class="section" id="formacion" aria-labelledby="formacion-title">
-            <div class="container">
-                <header class="section-head" data-reveal>
-                    <div class="section-bar mono"><span><span class="section-num">§ 04</span> — Formación</span><span>11 certificaciones verificables</span></div>
-                    <h2 class="section-title" id="formacion-title">Formación</h2>
-                </header>
+        <!-- P. 07 · FORMACIÓN -->
+        <section class="slide s-main" id="formacion" aria-labelledby="formacion-title">
+                <div class="slide-top">
+                    <span class="who"><strong>Vangelis Ramos</strong> · Portafolio</span>
+                    <span class="where mono"><span class="sec">§ 04</span> · Formación</span>
+                    <a class="key" href="#contacto" aria-label="Ir a la siguiente sección: Contacto">siguiente ↵</a>
+                </div>
 
-                <div class="edu">
-                    <div class="edu-item fade" data-reveal>
-                        <span class="xp-when mono">2021 — 2026</span>
+                <div data-reveal style="margin-top:clamp(28px,4vw,48px)">
+                    <h2 class="display" id="formacion-title"><span class="line"><span>Formación<span class="dot">.</span></span></span></h2>
+                </div>
+
+                <div class="edu-grid">
+                    <div class="edu-card reveal" data-reveal>
+                        <span class="when">2021 — 2026</span>
                         <h3>Ingeniero en Computación e Informática</h3>
                         <p>Universidad Andrés Bello. Título profesional. Desarrollo de software, algoritmos, bases de datos y sistemas.</p>
                     </div>
-                    <div class="edu-item fade" data-reveal>
-                        <span class="xp-when mono">2015 — 2020</span>
+                    <div class="edu-card reveal" data-reveal>
+                        <span class="when">2015 — 2020</span>
                         <h3>Enseñanza Media Científico-Humanista</h3>
                         <p>Liceo Nacional de Maipú. Electivo en Física.</p>
                     </div>
                 </div>
 
-                <p class="label certs-label" style="margin:56px 0 14px">Certificaciones</p>
+                <div class="certs-head"><span class="label">Certificaciones</span><span class="label">11 verificables</span></div>
                 <ul class="certs">
-                    <li class="cert fade" data-reveal><span class="cert-date mono">06.2026</span><p class="cert-name">Level UP Essentials Entry<span class="cert-org">Autodesk</span></p><a class="link-arrow" href="https://www.credly.com/badges/d77e4a15-ce9a-4416-beea-c29c0c789d27/public_url" target="_blank" rel="noopener">Verificar <svg class="icon" aria-hidden="true"><use href="#i-ne"/></svg><span class="sr-only"> Level UP Essentials Entry (abre en una pestaña nueva)</span></a></li>
-                    <li class="cert fade" data-reveal><span class="cert-date mono">06.2025</span><p class="cert-name">Machine Learning for Data Science Projects<span class="cert-org">IBM</span></p><a class="link-arrow" href="https://www.credly.com/badges/94b90262-249b-486c-9abf-287ad592fd9b/public_url" target="_blank" rel="noopener">Verificar <svg class="icon" aria-hidden="true"><use href="#i-ne"/></svg><span class="sr-only"> Machine Learning for Data Science Projects (abre en una pestaña nueva)</span></a></li>
-                    <li class="cert fade" data-reveal><span class="cert-date mono">06.2025</span><p class="cert-name">Building Generative AI-Powered Applications with Python<span class="cert-org">IBM · Coursera</span></p><a class="link-arrow" href="https://www.coursera.org/account/accomplishments/verify/1TE3HR0282TC" target="_blank" rel="noopener">Verificar <svg class="icon" aria-hidden="true"><use href="#i-ne"/></svg><span class="sr-only"> Building Generative AI-Powered Applications with Python (abre en una pestaña nueva)</span></a></li>
-                    <li class="cert fade" data-reveal><span class="cert-date mono">06.2025</span><p class="cert-name">IA Generativa: eleve su carrera en el desarrollo de software<span class="cert-org">IBM · Coursera</span></p><a class="link-arrow" href="https://www.coursera.org/account/accomplishments/verify/TM1UDBLWKPNM" target="_blank" rel="noopener">Verificar <svg class="icon" aria-hidden="true"><use href="#i-ne"/></svg><span class="sr-only"> IA Generativa: eleve su carrera en el desarrollo de software (abre en una pestaña nueva)</span></a></li>
-                    <li class="cert fade" data-reveal><span class="cert-date mono">06.2025</span><p class="cert-name">Guía profesional para desarrolladores de software y preparación de entrevistas<span class="cert-org">IBM · Coursera</span></p><a class="link-arrow" href="https://www.coursera.org/account/accomplishments/verify/7VNJQHPJCJTR" target="_blank" rel="noopener">Verificar <svg class="icon" aria-hidden="true"><use href="#i-ne"/></svg><span class="sr-only"> Guía profesional para desarrolladores de software (abre en una pestaña nueva)</span></a></li>
-                    <li class="cert fade" data-reveal><span class="cert-date mono">04.2025</span><p class="cert-name">Generative AI Essentials<span class="cert-org">Coursera</span></p><a class="link-arrow" href="https://www.credly.com/badges/d9e050fb-ec1c-4020-a8a0-dd3b70aaa463/public_url" target="_blank" rel="noopener">Verificar <svg class="icon" aria-hidden="true"><use href="#i-ne"/></svg><span class="sr-only"> Generative AI Essentials (abre en una pestaña nueva)</span></a></li>
-                    <li class="cert fade" data-reveal><span class="cert-date mono">04.2025</span><p class="cert-name">IA Generativa: Conceptos básicos de ingeniería de instrucciones<span class="cert-org">IBM · Coursera</span></p><a class="link-arrow" href="https://www.coursera.org/account/accomplishments/verify/19RMN389ZODX" target="_blank" rel="noopener">Verificar <svg class="icon" aria-hidden="true"><use href="#i-ne"/></svg><span class="sr-only"> IA Generativa: Conceptos básicos de ingeniería de instrucciones (abre en una pestaña nueva)</span></a></li>
-                    <li class="cert fade" data-reveal><span class="cert-date mono">04.2025</span><p class="cert-name">IA Generativa: Introducción y Aplicaciones<span class="cert-org">IBM · Coursera</span></p><a class="link-arrow" href="https://www.coursera.org/account/accomplishments/verify/JAII0WEASDQM" target="_blank" rel="noopener">Verificar <svg class="icon" aria-hidden="true"><use href="#i-ne"/></svg><span class="sr-only"> IA Generativa: Introducción y Aplicaciones (abre en una pestaña nueva)</span></a></li>
-                    <li class="cert fade" data-reveal><span class="cert-date mono">04.2025</span><p class="cert-name">Introducción a la inteligencia artificial (IA)<span class="cert-org">IBM · Coursera</span></p><a class="link-arrow" href="https://www.coursera.org/account/accomplishments/verify/1QT1LSJYVE40" target="_blank" rel="noopener">Verificar <svg class="icon" aria-hidden="true"><use href="#i-ne"/></svg><span class="sr-only"> Introducción a la inteligencia artificial (abre en una pestaña nueva)</span></a></li>
-                    <li class="cert fade" data-reveal><span class="cert-date mono">03.2025</span><p class="cert-name">Introducción a la ingeniería de software<span class="cert-org">IBM · Coursera</span></p><a class="link-arrow" href="https://www.coursera.org/account/accomplishments/verify/EWYXBR1DM2QW" target="_blank" rel="noopener">Verificar <svg class="icon" aria-hidden="true"><use href="#i-ne"/></svg><span class="sr-only"> Introducción a la ingeniería de software (abre en una pestaña nueva)</span></a></li>
-                    <li class="cert fade" data-reveal><span class="cert-date mono">—</span><p class="cert-name">Big Data: el impacto de los datos masivos en la sociedad actual<span class="cert-org">Universidad Autónoma de Barcelona · Coursera</span></p><a class="link-arrow" href="https://www.coursera.org/account/accomplishments/verify/55RKPQJUYGQQ" target="_blank" rel="noopener">Verificar <svg class="icon" aria-hidden="true"><use href="#i-ne"/></svg><span class="sr-only"> Big Data (abre en una pestaña nueva)</span></a></li>
+                        <li class="cert reveal" data-reveal><p class="cert-name">Level UP Essentials Entry<span class="cert-org">Autodesk · jun 2026</span></p><a class="pill" href="https://www.credly.com/badges/d77e4a15-ce9a-4416-beea-c29c0c789d27/public_url" target="_blank" rel="noopener">Verificar →<span class="sr-only"> Level UP Essentials Entry (abre en una pestaña nueva)</span></a></li>
+                        <li class="cert reveal" data-reveal><p class="cert-name">Machine Learning for Data Science Projects<span class="cert-org">IBM · jun 2025</span></p><a class="pill" href="https://www.credly.com/badges/94b90262-249b-486c-9abf-287ad592fd9b/public_url" target="_blank" rel="noopener">Verificar →<span class="sr-only"> Machine Learning for Data Science Projects (abre en una pestaña nueva)</span></a></li>
+                        <li class="cert reveal" data-reveal><p class="cert-name">Building Generative AI-Powered Applications with Python<span class="cert-org">IBM · Coursera · jun 2025</span></p><a class="pill" href="https://www.coursera.org/account/accomplishments/verify/1TE3HR0282TC" target="_blank" rel="noopener">Verificar →<span class="sr-only"> Building Generative AI-Powered Applications with Python (abre en una pestaña nueva)</span></a></li>
+                        <li class="cert reveal" data-reveal><p class="cert-name">IA Generativa: eleve su carrera en el desarrollo de software<span class="cert-org">IBM · Coursera · jun 2025</span></p><a class="pill" href="https://www.coursera.org/account/accomplishments/verify/TM1UDBLWKPNM" target="_blank" rel="noopener">Verificar →<span class="sr-only"> IA Generativa: eleve su carrera en el desarrollo de software (abre en una pestaña nueva)</span></a></li>
+                        <li class="cert reveal" data-reveal><p class="cert-name">Guía profesional para desarrolladores de software y preparación de entrevistas<span class="cert-org">IBM · Coursera · jun 2025</span></p><a class="pill" href="https://www.coursera.org/account/accomplishments/verify/7VNJQHPJCJTR" target="_blank" rel="noopener">Verificar →<span class="sr-only"> Guía profesional para desarrolladores de software (abre en una pestaña nueva)</span></a></li>
+                        <li class="cert reveal" data-reveal><p class="cert-name">Generative AI Essentials<span class="cert-org">Coursera · abr 2025</span></p><a class="pill" href="https://www.credly.com/badges/d9e050fb-ec1c-4020-a8a0-dd3b70aaa463/public_url" target="_blank" rel="noopener">Verificar →<span class="sr-only"> Generative AI Essentials (abre en una pestaña nueva)</span></a></li>
+                        <li class="cert reveal" data-reveal><p class="cert-name">IA Generativa: Conceptos básicos de ingeniería de instrucciones<span class="cert-org">IBM · Coursera · abr 2025</span></p><a class="pill" href="https://www.coursera.org/account/accomplishments/verify/19RMN389ZODX" target="_blank" rel="noopener">Verificar →<span class="sr-only"> IA Generativa: Conceptos básicos de ingeniería de instrucciones (abre en una pestaña nueva)</span></a></li>
+                        <li class="cert reveal" data-reveal><p class="cert-name">IA Generativa: Introducción y Aplicaciones<span class="cert-org">IBM · Coursera · abr 2025</span></p><a class="pill" href="https://www.coursera.org/account/accomplishments/verify/JAII0WEASDQM" target="_blank" rel="noopener">Verificar →<span class="sr-only"> IA Generativa: Introducción y Aplicaciones (abre en una pestaña nueva)</span></a></li>
+                        <li class="cert reveal" data-reveal><p class="cert-name">Introducción a la inteligencia artificial (IA)<span class="cert-org">IBM · Coursera · abr 2025</span></p><a class="pill" href="https://www.coursera.org/account/accomplishments/verify/1QT1LSJYVE40" target="_blank" rel="noopener">Verificar →<span class="sr-only"> Introducción a la inteligencia artificial (abre en una pestaña nueva)</span></a></li>
+                        <li class="cert reveal" data-reveal><p class="cert-name">Introducción a la ingeniería de software<span class="cert-org">IBM · Coursera · mar 2025</span></p><a class="pill" href="https://www.coursera.org/account/accomplishments/verify/EWYXBR1DM2QW" target="_blank" rel="noopener">Verificar →<span class="sr-only"> Introducción a la ingeniería de software (abre en una pestaña nueva)</span></a></li>
+                        <li class="cert reveal" data-reveal><p class="cert-name">Big Data: el impacto de los datos masivos en la sociedad actual<span class="cert-org">Universidad Autónoma de Barcelona · Coursera</span></p><a class="pill" href="https://www.coursera.org/account/accomplishments/verify/55RKPQJUYGQQ" target="_blank" rel="noopener">Verificar →<span class="sr-only"> Big Data (abre en una pestaña nueva)</span></a></li>
                 </ul>
-            </div>
+                <div class="slide-foot mono"><span>Vangelis Ramos Ríos — Portafolio técnico</span><span>P. 07 / 08</span></div>
         </section>
 
-        <!-- 05 · CONTACTO -->
-        <section class="contact" id="contacto" aria-labelledby="contacto-title">
-            <div class="container">
-                <header data-reveal>
-                    <div class="section-bar mono" style="margin-bottom:clamp(28px,5vw,48px)"><span><span class="section-num">§ 05</span> — Contacto</span><span>Santiago, Chile</span></div>
-                    <h2 class="contact-big" id="contacto-title">
-                        <span class="line"><span>Conversemos<span class="dot">.</span></span></span>
-                    </h2>
-                </header>
-                <p class="contact-lead fade" data-reveal>¿Necesitas soporte TI, automatizar un proceso o un sistema para tu negocio? Escríbeme.</p>
-                <a class="contact-mail fade" data-reveal href="mailto:contactovange02@gmail.com">contactovange02@gmail.com</a>
-                <div class="contact-links fade" data-reveal>
-                    <a class="link-arrow" href="https://www.linkedin.com/in/vangelis-ramos/" target="_blank" rel="noopener">LinkedIn <svg class="icon" aria-hidden="true"><use href="#i-ne"/></svg></a>
-                    <a class="link-arrow" href="https://github.com/Vangeum" target="_blank" rel="noopener">GitHub <svg class="icon" aria-hidden="true"><use href="#i-ne"/></svg></a>
-                    <a class="link-arrow" href="cv/Vangelis-Ramos-CV.pdf" download>Descargar CV <svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
+        <!-- P. 08 · CONTACTO -->
+        <section class="slide s-cream slide-contact" id="contacto" aria-labelledby="contacto-title">
+                <div class="slide-top">
+                    <span class="who"><strong>Vangelis Ramos</strong> · Portafolio</span>
+                    <span class="where mono"><span class="sec">§ 05</span> · Contacto</span>
+                    <a class="key" href="#inicio" aria-label="Volver al inicio">inicio ↑</a>
                 </div>
-            </div>
+
+                <div data-reveal>
+                    <h2 class="display contact-big" id="contacto-title"><span class="line"><span>Conversemos<span class="dot">.</span></span></span></h2>
+                </div>
+                <p class="lead reveal" data-reveal>¿Necesitas soporte TI, automatizar un proceso o un sistema para tu negocio? Escríbeme.</p>
+                <a class="contact-mail reveal" data-reveal href="mailto:contactovange02@gmail.com">contactovange02@gmail.com</a>
+                <div class="contact-links reveal" data-reveal>
+                    <a class="key key-lg" href="https://www.linkedin.com/in/vangelis-ramos/" target="_blank" rel="noopener">LinkedIn →</a>
+                    <a class="key key-lg" href="https://github.com/Vangeum" target="_blank" rel="noopener">GitHub →</a>
+                    <a class="key key-lg" href="cv/Vangelis-Ramos-CV.pdf" download>Descargar CV ↓</a>
+                </div>
+                <div class="slide-foot mono"><span>Hecho a mano — HTML, CSS y JavaScript</span><span>P. 08 / 08</span></div>
         </section>
 
     </main>
 
-    <footer class="footer">
-        <div class="container footer-inner mono">
-            <span>© <span data-year>2026</span> Vangelis Ramos Ríos</span>
-            <span>Hecho a mano — HTML, CSS y JavaScript</span>
-            <a class="link-arrow" href="#inicio">Volver arriba</a>
-        </div>
+    <footer class="wrap site-foot mono">
+        <span>© <span data-year>2026</span> Vangelis Ramos Ríos</span>
+        <span>Santiago, Chile</span>
     </footer>
 
     <script src="assets/js/main.js" defer></script>
