@@ -87,6 +87,69 @@
     });
   }
 
+  /* ---------- Figura ampliada ---------- */
+
+  var dialog = document.getElementById('fig-dialog');
+  var dialogBody = dialog && dialog.querySelector('[data-dialog-body]');
+  var dialogTitle = document.getElementById('fig-dialog-title');
+  var lastTrigger = null;
+
+  function openFigure(button) {
+    var figure = button.closest('.figure');
+    var slide = button.closest('.slide');
+    var source = figure.querySelector('.diagram-h');
+    var clone = source.cloneNode(true);
+
+    // IDs únicos en la copia, para no duplicar los del diagrama original
+    clone.querySelectorAll('[id]').forEach(function (el) { el.id = el.id + '-zoom'; });
+    clone.querySelectorAll('mpath').forEach(function (el) {
+      var ref = el.getAttribute('href');
+      if (ref) el.setAttribute('href', ref + '-zoom');
+    });
+    var labelled = clone.getAttribute('aria-labelledby');
+    if (labelled) {
+      clone.setAttribute('aria-labelledby', labelled.split(' ').map(function (id) { return id + '-zoom'; }).join(' '));
+    }
+    clone.setAttribute('class', 'diagram-full');
+
+    dialogBody.innerHTML = '';
+    dialogBody.appendChild(clone);
+    dialogTitle.textContent = figure.querySelector('.figure-bar span').textContent;
+    dialog.classList.remove('s-main', 's-cream');
+    dialog.classList.add(slide.classList.contains('s-cream') ? 's-cream' : 's-main');
+    lastTrigger = button;
+    dialog.showModal();
+  }
+
+  if (dialog && typeof dialog.showModal === 'function') {
+    document.querySelectorAll('[data-expand]').forEach(function (button) {
+      button.addEventListener('click', function () { openFigure(button); });
+    });
+    dialog.querySelector('[data-close]').addEventListener('click', function () { dialog.close(); });
+    dialog.addEventListener('click', function (event) {
+      if (event.target === dialog) dialog.close();
+    });
+    dialog.addEventListener('close', function () {
+      dialogBody.innerHTML = '';
+      if (lastTrigger) lastTrigger.focus();
+    });
+  } else {
+    document.querySelectorAll('[data-expand]').forEach(function (button) { button.hidden = true; });
+  }
+
+  /* ---------- Certificaciones adicionales ---------- */
+
+  var moreToggle = document.querySelector('[data-more]');
+  if (moreToggle) {
+    var moreList = document.getElementById(moreToggle.getAttribute('aria-controls'));
+    moreToggle.addEventListener('click', function () {
+      var open = moreToggle.getAttribute('aria-expanded') !== 'true';
+      moreToggle.setAttribute('aria-expanded', String(open));
+      moreList.hidden = !open;
+      moreToggle.textContent = moreToggle.getAttribute(open ? 'data-open-label' : 'data-closed-label');
+    });
+  }
+
   /* ---------- Año actual ---------- */
 
   var year = document.querySelector('[data-year]');

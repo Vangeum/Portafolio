@@ -857,6 +857,28 @@ a.pill:hover {
   }
 }
 
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.pill .icon {
+  width: 14px;
+  height: 14px;
+}
+
+.pill-muted {
+  border-style: dashed;
+}
+
+button.key {
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
 /* Panel del diagrama: colores del lado contrario de la diapositiva */
 .figure {
   margin: clamp(24px, 3vw, 36px) 0 0;
@@ -885,6 +907,105 @@ a.pill:hover {
 .figure-bar strong {
   font-weight: 500;
   color: var(--card-accent);
+}
+
+.figure-bar {
+  align-items: center;
+}
+
+.fig-expand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px 5px;
+  border: 1.5px solid currentColor;
+  border-bottom-width: 3px;
+  border-radius: 7px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.fig-expand .icon {
+  width: 14px;
+  height: 14px;
+}
+
+.fig-expand:hover {
+  background: var(--card-fg);
+  color: var(--card-bg);
+}
+
+.fig-expand:active {
+  transform: translateY(1px);
+  border-bottom-width: 1.5px;
+}
+
+/* Figura ampliada en pantalla completa */
+.fig-dialog {
+  width: min(1400px, 100vw - 24px);
+  max-width: none;
+  max-height: calc(100dvh - 24px);
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-card);
+  background: transparent;
+  color: inherit;
+  overflow: hidden;
+  --bp-bg: var(--card-bg);
+  --bp-line: var(--card-fg);
+  --bp-ink: var(--card-fg);
+}
+
+.fig-dialog::backdrop {
+  background: rgba(10, 11, 9, 0.84);
+}
+
+.fig-dialog-inner {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100dvh - 24px);
+  border-radius: var(--radius-card);
+  background: var(--card-bg);
+  color: var(--card-fg);
+}
+
+.fig-dialog-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--card-line);
+  font-size: 0.8rem;
+}
+
+.fig-dialog-body {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  scrollbar-color: var(--card-fg) transparent;
+}
+
+.fig-dialog-body svg {
+  width: 100%;
+  min-width: 920px;
+  height: auto;
+}
+
+.fig-dialog-hint {
+  display: none;
+  padding: 0 18px 14px;
+  font-size: 0.72rem;
+  opacity: 0.8;
+}
+
+@media (max-width: 919px) {
+  .fig-dialog-hint {
+    display: block;
+  }
 }
 
 .diagram {
@@ -1255,6 +1376,71 @@ a.pill:hover {
   color: var(--accent);
 }
 
+.certs-top {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.cert-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  border-radius: var(--radius-card);
+  background: var(--card-bg);
+  color: var(--card-fg);
+}
+
+.cert-card .cert-org {
+  display: block;
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--card-accent);
+}
+
+.cert-title {
+  flex: 1;
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.cert-card .pill {
+  align-self: flex-start;
+}
+
+.cert-card a.pill:hover {
+  background: var(--card-fg);
+  color: var(--card-bg);
+  border-color: var(--card-fg);
+}
+
+@media (min-width: 700px) {
+  .certs-top {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1100px) {
+  .certs-top {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.more-toggle {
+  margin-top: 22px;
+}
+
+.certs-more {
+  margin-top: 10px;
+}
+
+.certs-more[hidden] {
+  display: none;
+}
+
 .certs {
   display: grid;
 }
@@ -1425,8 +1611,14 @@ a.pill:hover {
   .chips,
   #crm .figure,
   #crm .cols,
+  .screen-only,
   .cap .pill,
   .cert .pill,
+  .cert-card .pill,
+  .project-actions,
+  .fig-expand,
+  .fig-dialog,
+  .more-toggle,
   .cover-info {
     display: none !important;
   }
@@ -1715,11 +1907,38 @@ a.pill:hover {
     padding-bottom: 3pt;
   }
 
-  .certs {
+  .certs,
+  .certs-top {
     display: block;
     columns: 2;
     column-gap: 16pt;
+    margin: 0;
     padding-top: 3pt;
+  }
+
+  .certs-more[hidden] {
+    display: block !important;
+  }
+
+  .cert-card {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 0;
+    padding: 1.5pt 0;
+    border-radius: 0;
+    break-inside: avoid;
+  }
+
+  .cert-title {
+    font-size: 8.3pt;
+    line-height: 1.3;
+  }
+
+  .cert-card .cert-org {
+    font-family: var(--sans);
+    font-size: 7.5pt;
+    letter-spacing: 0;
+    color: #55534b;
   }
 
   .cert {
